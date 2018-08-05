@@ -1,0 +1,1 @@
+"use strict";var toggleModal=function(o){console.log(o),document.querySelector(o).classList.toggle("show")};
