@@ -15,14 +15,14 @@ let toggleModal = (page) => {
         },500)
     }
 }
-
-document.addEventListener("touchmove", function(e) { e.preventDefault() });
-window.addEventListener("load", function() { window. scrollTo(0, 0); });
-
-
+//
+// document.addEventListener("touchmove", function(e) { e.preventDefault() });
+// window.addEventListener("load", function() { window. scrollTo(0, 0); });
 
 
-alert('touch')
+
+
+alert('fix')
 
 
 
