@@ -1,6 +1,7 @@
+build
+.idea
 node_modules
 *.iml
-.idea
 *-lock.json
 *.lock
 

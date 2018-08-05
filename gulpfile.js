@@ -20,6 +20,8 @@ var gulpImports = require('gulp-imports');
 gulp.task('browser-sync', function () {
     var files = [
         './build/**/*.html',
+        './build/**/*.js',
+        './build/*.js',
         './build/css/**/*.css'
     ];
 
@@ -92,7 +94,7 @@ gulp.task('scripts', function () {
 gulp.task('default', ['browser-sync'], function () {
     // gulp.watch("src/images/**/*", ['images']);
     gulp.watch(["./src/*.sass","./src/*/*.sass"], ['styles']);
-    gulp.watch("./src/*.js", ['scripts']);
+    gulp.watch("./src/*.js", [['scripts']]);
     gulp.watch(["./src/*.jade","./src/*/*.jade"], ['templates']);
     // gulp.watch(["./build/*.html", "./build/style/*.css"], ['browser-sync']);
 });
