@@ -22,6 +22,9 @@ window.addEventListener("load", function() { window. scrollTo(0, 0); });
 
 
 
+alert(1)
+
+
 
 
 
