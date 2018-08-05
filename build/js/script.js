@@ -1,1 +1,1 @@
-"use strict";var toggleModal=function(o){console.log(o),document.querySelector(o).classList.toggle("show")};
+"use strict";var toggleModal=function(s){{var t=document.querySelector(s);t.classList.contains("show")}t.classList.contains("show")?(t.classList.toggle("show"),setTimeout(function(){t.classList.toggle("display-block")},500)):(t.classList.toggle("display-block"),setTimeout(function(){t.classList.toggle("show")},0))};
