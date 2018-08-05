@@ -95,6 +95,6 @@ gulp.task('default', ['browser-sync'], function () {
     // gulp.watch("src/images/**/*", ['images']);
     gulp.watch(["./src/*.sass","./src/*/*.sass"], ['styles']);
     gulp.watch("./src/*.js", [['scripts']]);
-    gulp.watch(["./src/*.jade","./src/*/*.jade"], ['templates']);
+    gulp.watch(["./src/*.jade","./src/jade/*.jade"], ['templates']);
     // gulp.watch(["./build/*.html", "./build/style/*.css"], ['browser-sync']);
 });
