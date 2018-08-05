@@ -22,9 +22,6 @@ let toggleModal = (page) => {
 
 
 
-alert('100%')
-
-
 
 
 
