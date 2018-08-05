@@ -15,12 +15,29 @@ let toggleModal = (page) => {
         },500)
     }
 }
-//
-// document.addEventListener("touchmove", function(e) { e.preventDefault() });
-// window.addEventListener("load", function() { window. scrollTo(0, 0); });
 
+let titleText = (type, text) => {
+    console.log(text)
+    document.querySelector('.h1-title').innerHTML = text
+    let textName = "I'm\n Natali Yeromina"
+    // let textName = "ina"
+    // let textWork = "gn"
+    let textWork = "I'm\n Graphic Design"
+    setTimeout(()=>{
+        if(type == true && text.length < textName.length){
+            titleText(true, text + textName[text.length])
+        } else if(type == true && text.length >= textName.length){
+            titleText(false, '')
+        } else if(type == false && text.length < textWork.length){
+            titleText(false, text + textWork[text.length])
+        } else {
+            titleText(true, '')
+        }
 
+    }, 300)
+}
 
+titleText(true, '')
 
 
 

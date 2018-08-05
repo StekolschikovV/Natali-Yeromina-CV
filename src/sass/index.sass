@@ -8,15 +8,16 @@
       height: 45px
       text-align: center
       text-transform: uppercase
-      border: 3px solid black
-      color: black
+      border: 3px solid $color-text-main
+      color: $color-text-main
       font-weight: bold
       text-decoration: none !important
       transition: 0.5s
       line-height: 1.2
       &:hover
-        background: black
+        background: lighten($color-text-main, 25%)
         color: white
+        border-color: lighten($color-text-main, 25%)
     .top
       left: 0
       right: 0
