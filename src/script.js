@@ -16,6 +16,8 @@ let toggleModal = (page) => {
     }
 }
 
+document.addEventListener("touchmove", function(e) { e.preventDefault() });
+window.addEventListener("load", function() { window. scrollTo(0, 0); });
 
 
 
