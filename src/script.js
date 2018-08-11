@@ -17,11 +17,8 @@ let toggleModal = (page) => {
 }
 
 let titleText = (type, text) => {
-    console.log(text)
     document.querySelector('.h1-title').innerHTML = text
     let textName = "I'm\n Natali Yeromina"
-    // let textName = "ina"
-    // let textWork = "gn"
     let textWork = "I'm\n Graphic Design"
     setTimeout(()=>{
         if(type == true && text.length < textName.length){
@@ -41,9 +38,48 @@ titleText(true, '')
 
 
 
-// toggleModal('.about-p')
+toggleModal('.portfolio-p')
 
 
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA8bpN-HWexiOfk6uXYi3OLMnahw7xFE88",
+    authDomain: "natali-yeromina.firebaseapp.com",
+    databaseURL: "https://natali-yeromina.firebaseio.com",
+    projectId: "natali-yeromina",
+    storageBucket: "",
+    messagingSenderId: "545859286062"
+  };
+  firebase.initializeApp(config);
+  var defaultDatabase = firebase.database();
+  
+  
+  var feed = defaultDatabase.ref('portfolio')
+
+
+feed.on('value', function (id) {
+    id.forEach(function (el) {
+
+        // for(let i = 0; i < 10; i++){
+
+     
+        let cont = document.createElement("div")
+        cont.classList.add('col-md-4')
+
+        let a = document.createElement("a")
+        if(el.val().src)
+            a.href = el.val().src
+        if(el.val().img)
+            a.style.backgroundImage = `url('${el.val().img}')`;
+        if(el.val().title)
+            a.innerText = el.val().title;  
+
+        cont.appendChild(a)
+        document.querySelector('.portfolio-p .content-block').appendChild(cont)
+    // }
+    });
+})
 
 
 
