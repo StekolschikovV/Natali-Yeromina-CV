@@ -1,9 +1,29 @@
+@keyframes hide
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+
+@keyframes show
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+  
 .portfolio-p.show
   left: 0vw
 .portfolio-p
+ 
   top: 0
   left: -100vw
-  transition: 0.5s
+  transition: 0.5s !important
+  .hide
+    animation: hide  0.5s
+  .show
+     animation: show  0.5s
+  .selected
+    background: red
   p
     width: 100%
   .content-block
@@ -22,4 +42,7 @@
         font-size: 1.5em
         text-shadow: 0px 1px 10px white
         
+
+
+
 

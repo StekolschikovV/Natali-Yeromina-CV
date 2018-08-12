@@ -57,16 +57,13 @@ var defaultDatabase = firebase.database();
 
 let portfolio = defaultDatabase.ref('portfolio')
 portfolio.on('value', function (id) {
-    id.forEach(function (el) {
-
-        // for(let i = 0; i < 10; i++){
-
-        // console.log(el.val().tag)
+    id.forEach((el) => {
 
         let cont = document.createElement("div")
         cont.classList.add('col-md-4')
 
         let a = document.createElement("a")
+        a.classList.add('portfolio-el')
         if (el.val().src)
             a.href = el.val().src
         if (el.val().img)
@@ -78,7 +75,7 @@ portfolio.on('value', function (id) {
 
         cont.appendChild(a)
         document.querySelector('.portfolio-p .content-block').appendChild(cont)
-        // }
+
     });
 })
 
@@ -86,24 +83,79 @@ portfolio.on('value', function (id) {
 let portfolioTags = defaultDatabase.ref('portfolio-tags')
 portfolioTags.on('value', function (id) {
     let portfolioTagsList = []
-    id.forEach(function (el) {
+    id.forEach((el) => {
         portfolioTagsList.push([el.val(), el.key])
     });
-    showTags(portfolioTagsList)
+    portfolioClass.showTags(portfolioTagsList)
 })
 
-let showTags = (tags) => {
-    tags.forEach((e, i) => {
-        let btn = document.createElement("button")
-        btn.innerText = e[0]
-        btn.addEventListener('click', ()=>{
-            alert(e[1])
-        })
-        
-        document.querySelector('#tags').appendChild(btn)
+class Portfolio {
 
-    })
+    constructor() {
+        this.selected = []
+    }
+
+    showTags(tags) {
+        tags.forEach((e, i) => {
+            let btn = document.createElement("button")
+            btn.classList.add('btn')
+
+            btn.setAttribute("type", "button");
+            btn.innerText = e[0]
+            btn.dataset.tag = e[1]
+            btn.addEventListener('click', () => {
+                portfolioClass.click(e[0], e[1])
+            })
+            document.querySelector('#tags').appendChild(btn)
+        })
+    }
+
+    click(text, tag) {
+        if (!this.selected.includes(tag))
+            this.selected.push(tag)
+        else
+            this.selected = this.selected.filter(function (e) { return e !== tag })
+        this.hideShowEl()
+        this.tagsIndicate()
+    }
+
+    hideShowEl() {
+        let portfolioEl = document.querySelectorAll('.portfolio-el')
+        portfolioEl.forEach((e, i) => {
+            if (!this.selected.includes(e.dataset.tag)) {
+                e.classList.remove('show')
+                e.classList.add('hide')
+                setTimeout(() => {
+                    e.classList.add('display-none')
+                }, 500)
+            } else {
+                if (e.classList.contains("hide")) {
+                    e.classList.add('show')
+                    setTimeout(() => {
+                        e.classList.remove('hide')
+                        e.classList.remove('display-none')
+                    }, 500)
+                }
+            }
+            if (this.selected.length == 0) {
+                e.classList.add('show')
+                setTimeout(() => {
+                    e.classList.remove('hide')
+                    e.classList.remove('display-none')
+                }, 500)
+            }
+        })
+    }
+
+    tagsIndicate() {
+        let btn = document.querySelectorAll('#tags button')
+        btn.forEach((e, i) => {
+            if (this.selected.includes(e.dataset.tag))
+                e.classList.add('selected')
+            else
+                e.classList.remove('selected')
+        })
+    }
 }
 
-
-
+let portfolioClass = new Portfolio()
