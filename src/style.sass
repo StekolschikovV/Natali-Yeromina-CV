@@ -1,4 +1,5 @@
 $color-text-main: #202020
+$color-text-main-light: #bbbbbb
 
 html
   -webkit-text-size-adjust: 100%
@@ -9,7 +10,7 @@ body
   overflow: hidden
   min-width: 100%
   max-width: 100%
-  background-image: url("https://pp.userapi.com/c837429/v837429435/2364e/Bm93TTcYULg.jpg")
+  //background-image: url("https://pp.userapi.com/c837429/v837429435/2364e/Bm93TTcYULg.jpg")
   background-repeat: no-repeat
   background-size: cover
   max-width: 100%
@@ -44,10 +45,17 @@ body
     font-weight: bold
     line-height: 1
     position: relative
-    color: $color-text-main
-    -webkit-background-clip: text
-    -webkit-text-fill-color: transparent
-    background-image: url(https://media.giphy.com/media/KEyRqrjHR0RJm/giphy.gif)
+    color: $color-text-main-light
+//-webkit-background-clip: text
+//-webkit-text-fill-color: transparent
+//background-image: url(https://media.giphy.com/media/KEyRqrjHR0RJm/giphy.gif)
+//color: red
+@media (max-width: 991px)
+  .h1-title-block
+    position: absolute
+    left: 0
+    top: 0
+    padding: 5em
 
 @media (max-width: 500px)
   .h1-title-block

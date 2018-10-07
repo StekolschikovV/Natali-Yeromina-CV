@@ -30,6 +30,7 @@ gulp.task('browser-sync', function () {
             baseDir: './build/'
         }
     });
+    console.log(111);
 });
 
 gulp.task('images', function () {
@@ -88,13 +89,13 @@ gulp.task('scripts', function () {
         .pipe(babel())
         .pipe(uglify())
         .pipe(gulp.dest('./build/js'))
-    // .pipe(browserSync.reload({ stream: true }))
+    .pipe(browserSync.reload({ stream: true }))
 });
 
 gulp.task('default', ['browser-sync'], function () {
     // gulp.watch("src/images/**/*", ['images']);
-    gulp.watch(["./src/*.sass","./src/*/*.sass"], ['styles']);
-    gulp.watch("./src/*.js", [['scripts']]);
-    gulp.watch(["./src/*.jade","./src/jade/*.jade"], ['templates']);
+    gulp.watch(["./src/*.sass","./src/*/*.sass"], ['styles'], browserSync.reload);
+    gulp.watch("./src/*.js", [['scripts']], browserSync.reload);
+    gulp.watch(["./src/*.jade","./src/jade/*.jade"], ['templates'], browserSync.reload);
     // gulp.watch(["./build/*.html", "./build/style/*.css"], ['browser-sync']);
 });

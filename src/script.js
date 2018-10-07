@@ -37,8 +37,9 @@ let titleText = (type, text) => {
 titleText(true, '')
 
 
+// toggleModal('.portfolio-p')
 
-toggleModal('.portfolio-p')
+
 
 
 
