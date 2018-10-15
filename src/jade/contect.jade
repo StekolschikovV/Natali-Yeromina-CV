@@ -1,34 +1,43 @@
 .contact-p.content-block-full
+
     .container
         .row.page-controls
-            .col.text-center logo
-            .col.text-right
-                button(onclick="toggleModal('.contact-p')")
+            .logo
+                h2.text get in touch
+                .minText
+                    h6 contact me
+            .rightButton(onclick="toggleModal('.contact-p')")
                     i.fa.fa-arrow-down(aria-hidden='true')
         .row
-            .col
-                p You will need to have control over the font that is used in order to use this text. You will need to have control over the font that is used in order to use this text. You will need to have control over the font that is used in order to use this text. You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-    include footer.jade
+            .col-md-12.form-title.text-center
+                h4 HOW I CAN HELP YOU?
+            .col-lg-2.col-xl-3.col-sm-1
+            .col-lg-8.col-xl-6.col-sm-10
+                form
+                    .form-row
+                        .col-md-6
+                            input(type='text', placeholder='YOUR NAME').form-control
+                        .col-md-6
+                            input(type='text', placeholder='YOUR E-MAIL').form-control
+                        .col-md-12
+                            input(type='text', placeholder='SUBJECT').form-control
+                        .col-md-12
+                            textarea(rows="6", placeholder='MASSAGE').form-control
+                        .col-md-12
+                            button Submit
+            .col-lg-2.col-xl-3.col-sm-1
+            .col-lg-2.col-xl-3.col-sm-1
+            .col-lg-8.col-xl-6.col-sm-10
+                .row
+                    .col-sm-6.col-xs-6.c-block
+                        img(src='./img/с1.jpg')
+                        .text
+                            .title PHONE
+                            .val +1 (386) 302 9999
+                    .col-sm-6.col-xs-6.c-block
+                        img(src='./img/с2.jpg')
+                        .text
+                            .title E-MAIL
+                            .val NataliyaYeromina@gmai.com
+            .col-lg-2.col-xl-3.col-sm-1
+    //include footer.jade

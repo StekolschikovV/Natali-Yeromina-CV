@@ -3,6 +3,8 @@ let toggleModal = (page) => {
     let selector = document.querySelector(page)
     let isSelectorShow = selector.classList.contains('show')
 
+    navZIndex(isSelectorShow)
+
     if (!selector.classList.contains('show')) {
         selector.classList.toggle('display-block')
         setTimeout(() => {
@@ -14,6 +16,23 @@ let toggleModal = (page) => {
             selector.classList.toggle('display-block')
         }, 500)
     }
+
+}
+
+let navZIndex = (status) => {
+    document.querySelectorAll('nav a').forEach((e) => {
+        if(status) {
+
+            setTimeout(()=>{
+                e.style.zIndex = 9
+                e.style.transition = '.5s'
+            },500)
+        }
+        else {
+            e.style.zIndex = 0
+            e.style.transition = '0s'
+        }
+    })
 }
 
 let titleText = (type, text) => {
@@ -37,10 +56,7 @@ let titleText = (type, text) => {
 titleText(true, '')
 
 
-// toggleModal('.portfolio-p')
-
-
-
+toggleModal('.contact-p')
 
 
 // Initialize Firebase

@@ -1,7 +1,48 @@
 .contact-p.show
   top: 0vh
 .contact-p
-  background: red
+  //background: $color-text-main
   top: 100vh
   transition: 0.5s
+  .c-block
+    position: relative
+    margin-bottom: 3em
+    .text
+      position: absolute
+      width: calc(100% - 50px)
+      height: 100%
+      color: white
+      top: 0
+      left:  25px
+      bottom: 0
+      display: flex
+      flex-direction: column
+      flex-wrap: nowrap
+      justify-content: center
+      align-items: center
+      font-size: 0.8em
+      .title
+        display: flex
+      .val
+        display: flex
+    img
+      width: 100%
+  .form-title
+    margin-bottom: 2em
+  form
+    margin-bottom: 4em
+    input, textarea
+      border-radius: 0
+      margin-bottom: 1em
+      border: 0
+      background: $color-text-main-super-light
+    button
+      background: $color-text-red
+      color: white
+      padding: 0.5em 1em
+      border: 0
+      transition: 0.5s
+      cursor: pointer
+      &:hover
+        background: darken($color-text-red, 20%)
 

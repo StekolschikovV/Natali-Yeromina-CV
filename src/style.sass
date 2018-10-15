@@ -1,5 +1,7 @@
 $color-text-main: #202020
 $color-text-main-light: #bbbbbb
+$color-text-main-super-light: #e1e1e1
+$color-text-red: #ff0000
 
 html
   -webkit-text-size-adjust: 100%
@@ -83,11 +85,43 @@ body
   overflow-y: auto !important
 
 .page-controls
-  position: fixed
+  position: relative
+  //position: fixed
   width: 100%
   top: 5px
   left: 0
   z-index: 999
+  //background: red
+  min-height: 50px
+  margin-right: 0
+  margin-left: 0
+  .logo
+    left: 0
+    right: 0
+    margin: auto
+    text-align: center
+    text-transform: uppercase
+    position: relative
+    margin-bottom: 4em
+    .text
+      color: $color-text-main
+      border-bottom: 1px  solid $color-text-main
+      padding-bottom: 10px
+    .minText
+      h6
+        position: absolute
+        right: 0
+        background: white
+        color: $color-text-red
+        padding: 5px
+        margin-top: -25px
+  .rightButton
+    position: absolute
+    z-index: 1
+    right: 0
+    top: 1em
+    cursor: pointer
+
   button
     background: transparent
     border: 0
