@@ -3,6 +3,15 @@ $color-text-main-light: #bbbbbb
 $color-text-main-super-light: #e1e1e1
 $color-text-red: #ff0000
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans')
+
+h1, h2, h3, h4, h5, h6
+  font-family: Open Sans
+h1
+  font-size: 45px
+h5
+  font-size: 14px
+
 html
   -webkit-text-size-adjust: 100%
   box-sizing: border-box
@@ -70,9 +79,6 @@ body
 .display-block
   display: block !important
 
-// .content-block, .content-block-full
-
-
 
 .content-block-full
   background: #ffffff
@@ -86,6 +92,7 @@ body
 
 .page-controls
   position: relative
+  justify-content: center
   //position: fixed
   width: 100%
   top: 5px
@@ -95,26 +102,6 @@ body
   min-height: 50px
   margin-right: 0
   margin-left: 0
-  .logo
-    left: 0
-    right: 0
-    margin: auto
-    text-align: center
-    text-transform: uppercase
-    position: relative
-    margin-bottom: 4em
-    .text
-      color: $color-text-main
-      border-bottom: 1px  solid $color-text-main
-      padding-bottom: 10px
-    .minText
-      h6
-        position: absolute
-        right: 0
-        background: white
-        color: $color-text-red
-        padding: 5px
-        margin-top: -25px
   .rightButton
     position: absolute
     z-index: 1
@@ -122,22 +109,18 @@ body
     top: 1em
     cursor: pointer
 
-  button
-    background: transparent
-    border: 0
-    outline: none !important
-    font-size: 25px
-    transition: 0.5s
-    cursor: pointer
-    color: $color-text-main
-    &:hover
-      color: lighten($color-text-main, 25%)
+  //button
+  //  background: transparent
+  //  border: 0
+  //  outline: none !important
+  //  font-size: 25px
+  //  transition: 0.5s
+  //  cursor: pointer
+  //  color: $color-text-main
+  //  &:hover
+  //    color: lighten($color-text-main, 25%)
 
-// .content-block
-//   margin-bottom: 6em
-
-
-  
+@import "./sass/mixins.sass"
 @import "./sass/index.sass"
 @import "./sass/portfolio.sass"
 @import "./sass/about.sass"

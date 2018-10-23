@@ -1,11 +1,10 @@
+include ./mixins.jade
+
 .contact-p.content-block-full
 
     .container
-        .row.page-controls
-            .logo
-                h2.text get in touch
-                .minText
-                    h6 contact me
+        .row.page-controls.text-center.margin-bottom-4
+            +page-title('GET IN TOUCH', 'GET IN TOUCH')
             .rightButton(onclick="toggleModal('.contact-p')")
                     i.fa.fa-arrow-down(aria-hidden='true')
         .row
@@ -24,7 +23,7 @@
                         .col-md-12
                             textarea(rows="6", placeholder='MASSAGE').form-control
                         .col-md-12
-                            button Submit
+                            button.red-btn Submit
             .col-lg-2.col-xl-3.col-sm-1
             .col-lg-2.col-xl-3.col-sm-1
             .col-lg-8.col-xl-6.col-sm-10
