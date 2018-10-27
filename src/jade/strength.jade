@@ -1,34 +1,27 @@
+include ./mixins.jade
+
 .strength-p.content-block-full
     .container
-        .row.page-controls
-            .col.text-center logo
-            .col.text-right
-                button(onclick="toggleModal('.strength-p')")
-                    i.fa.fa-arrow-right(aria-hidden='true')
         .row
-            .col
-                p You will need to have control over the font that is used in order to use this text. You will need to have control over the font that is used in order to use this text. You will need to have control over the font that is used in order to use this text. You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-                p You will need to have control over the font that is used in order to use this text.
-    include footer.jade
+            //- ABOUT ME
+            .col-lg-2.col-xl-3.col-sm-1
+            .col-lg-8.col-xl-6.col-sm-10.margin-bottom-4
+                .row
+                    .col-md-12.text-center
+                        +page-title('WHAT I DO', 'TAKE A LOOK')
+            .col-lg-2.col-xl-3.col-sm-1
+            //- ICONS TOP
+            .col-lg-2.col-xl-3.col-sm-1
+            .col-lg-8.col-xl-6.col-sm-10.margin-bottom-4.icons-top
+                .row
+                    .col-md-6
+                        img(src='img/serv1.jpg')
+                    .col-md-6 12
+            .col-lg-2.col-xl-3.col-sm-1
+
+            //- ICONS TOP
+            .col-lg-2.col-xl-3.col-sm-1
+            .col-lg-8.col-xl-6.col-sm-10.margin-bottom-4.icons-top
+                include ./footer.jade
+            .col-lg-2.col-xl-3.col-sm-1
+            

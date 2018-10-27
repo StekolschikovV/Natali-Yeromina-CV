@@ -56,7 +56,7 @@ let titleText = (type, text) => {
 titleText(true, '')
 
 
-toggleModal('.about-p')
+toggleModal('.strength-p')
 
 
 // Initialize Firebase
