@@ -56,7 +56,7 @@ let titleText = (type, text) => {
 titleText(true, '')
 
 
-// toggleModal('.strength-p')
+toggleModal('.portfolio-p')
 
 
 // Initialize Firebase
@@ -139,27 +139,28 @@ class Portfolio {
     hideShowEl() {
         let portfolioEl = document.querySelectorAll('.portfolio-el')
         portfolioEl.forEach((e, i) => {
-            if (!this.selected.includes(e.dataset.tag)) {
-                e.classList.remove('show')
-                e.classList.add('hide')
+            if (this.selected.length == 0) {
+                e.parentNode.classList.add('show')
                 setTimeout(() => {
-                    e.classList.add('display-none')
+                    e.parentNode.classList.remove('hide')
+                    e.parentNode.classList.remove('display-none')
                 }, 500)
             } else {
-                if (e.classList.contains("hide")) {
-                    e.classList.add('show')
+                if (!this.selected.includes(e.dataset.tag)) {
+                    e.parentNode.classList.remove('show')
+                    e.parentNode.classList.add('hide')
                     setTimeout(() => {
-                        e.classList.remove('hide')
-                        e.classList.remove('display-none')
+                        e.parentNode.classList.add('display-none')
                     }, 500)
+                } else {
+                    if (e.parentNode.classList.contains("hide")) {
+                        e.parentNode.classList.add('show')
+                        setTimeout(() => {
+                            e.parentNode.classList.remove('hide')
+                            e.parentNode.classList.remove('display-none')
+                        }, 500)
+                    }
                 }
-            }
-            if (this.selected.length == 0) {
-                e.classList.add('show')
-                setTimeout(() => {
-                    e.classList.remove('hide')
-                    e.classList.remove('display-none')
-                }, 500)
             }
         })
     }
