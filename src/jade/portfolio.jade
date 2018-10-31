@@ -1,12 +1,10 @@
-//- .portfolio-p.content-block-full
-//-     .container
-//-         .row.page-controls
-//-             .col.text-center logo
-//-             .col.text-center
-//-                 button(onclick="toggleModal('.portfolio-p')")
-//-                     i.fa.fa-arrow-left(aria-hidden='true')
+include ./mixins.jade
+
+.portfolio-p.content-block-full
+    +back-arrow('fa-arrow-right', 'portfolio-p')
+
         
-//-         .row.content-block
-//-             #tags.col-md-12
+        .row.content-block
+            #tags.col-md-12
            
-//-     include footer.jade
+    include footer.jade

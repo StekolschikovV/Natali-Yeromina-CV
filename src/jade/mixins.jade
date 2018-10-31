@@ -5,7 +5,8 @@ mixin page-title(h1, h5)
         h5= h5
 
 
-mixin back-arrow
-    .container
+mixin back-arrow(arrowClass, pageClass)
+    .container.back-arrow
         .row
-            .col-md-12.text-right 1
+            .col-md-12.text-right 
+                i.fa(aria-hidden='true', class=arrowClass, onclick="toggleModal('." + pageClass + "')")

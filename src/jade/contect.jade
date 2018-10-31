@@ -3,10 +3,9 @@ include ./mixins.jade
 .contact-p.content-block-full
 
     .container
+        +back-arrow('fa-arrow-up', 'contact-p')
         .row.page-controls.text-center.margin-bottom-4
             +page-title('GET IN TOUCH', 'GET IN TOUCH')
-            .rightButton(onclick="toggleModal('.contact-p')")
-                    i.fa.fa-arrow-down(aria-hidden='true')
         .row
             .col-md-12.form-title.text-center
                 h4 HOW I CAN HELP YOU?
