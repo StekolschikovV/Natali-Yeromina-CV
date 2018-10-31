@@ -21,12 +21,12 @@ let toggleModal = (page) => {
 
 let navZIndex = (status) => {
     document.querySelectorAll('nav a').forEach((e) => {
-        if(status) {
+        if (status) {
 
-            setTimeout(()=>{
+            setTimeout(() => {
                 e.style.zIndex = 9
                 e.style.transition = '.5s'
-            },500)
+            }, 500)
         }
         else {
             e.style.zIndex = 0
@@ -79,16 +79,28 @@ portfolio.on('value', function (id) {
         let cont = document.createElement("div")
         cont.classList.add('col-md-4')
 
+
+
+
+
         let a = document.createElement("a")
         a.classList.add('portfolio-el')
         if (el.val().src)
             a.href = el.val().src
-        if (el.val().img)
-            a.style.backgroundImage = `url('${el.val().img}')`;
+        // if (el.val().img)
+        //     a.style.backgroundImage = `url('${el.val().img}')`;
         if (el.val().title)
             a.innerText = el.val().title;
         if (el.val().tag)
             a.dataset.tag = el.val().tag
+
+
+        if (el.val().img) {
+            let img = document.createElement("img")
+            img.src = el.val().img
+            a.appendChild(img)
+        }
+
 
         cont.appendChild(a)
         document.querySelector('.portfolio-p .content-block').appendChild(cont)
