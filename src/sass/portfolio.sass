@@ -14,7 +14,8 @@
 .portfolio-p.show
   left: 0vw
 .portfolio-p
- 
+
+
   top: 0
   left: -100vw
   transition: 0.5s !important
@@ -22,13 +23,25 @@
     animation: hide  0.5s
   .show
      animation: show  0.5s
+  .btn
+    background: #cccccc
+    border: 1px solid #999999
+    border-radius: 0
+    text-transform: uppercase
+    outline: none !important
   .selected
-    background: red
+    background: white
+    border-color: #cc0000
+    color: #cc0000
   p
     width: 100%
   .content-block
+    img
+      max-width: 100%
+      min-width: 100%
     div
       a
+        
         background: red
         // display: block
         // width: 100%
@@ -47,7 +60,4 @@
           max-width: 100%
         // &:hover
         //   display: none
-
-
-
 

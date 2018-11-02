@@ -74,27 +74,27 @@ var defaultDatabase = firebase.database();
 
 let portfolio = defaultDatabase.ref('portfolio')
 portfolio.on('value', function (id) {
+    let cont1 = document.createElement("div")
+    cont1.classList.add('col-md-4')
+    let cont2 = document.createElement("div")
+    cont2.classList.add('col-md-4')
+    let cont3 = document.createElement("div")
+    cont3.classList.add('col-md-4')
+
+    let lastId = 3;
     id.forEach((el) => {
 
-        let cont = document.createElement("div")
-        cont.classList.add('col-md-4')
-
-
-
-
+        // let cont = document.createElement("div")
+        // cont.classList.add('col-md-4')
 
         let a = document.createElement("a")
         a.classList.add('portfolio-el')
         if (el.val().src)
             a.href = el.val().src
-        // if (el.val().img)
-        //     a.style.backgroundImage = `url('${el.val().img}')`;
         if (el.val().title)
             a.innerText = el.val().title;
         if (el.val().tag)
             a.dataset.tag = el.val().tag
-
-
         if (el.val().img) {
             let img = document.createElement("img")
             img.src = el.val().img
@@ -102,10 +102,25 @@ portfolio.on('value', function (id) {
         }
 
 
-        cont.appendChild(a)
-        document.querySelector('.portfolio-p .content-block').appendChild(cont)
+        if(lastId == 1){
+            cont1.appendChild(a)
+            lastId = 2
+        } else if(lastId == 2){
+            cont2.appendChild(a)
+            lastId = 3 
+        } else if(lastId == 3){
+            cont3.appendChild(a)
+            lastId = 1 
+        }
+           
+            
+        // document.querySelector('.portfolio-p .content-block').appendChild(cont)
 
     });
+
+    document.querySelector('.portfolio-p .content-block').appendChild(cont1)
+    document.querySelector('.portfolio-p .content-block').appendChild(cont2)
+    document.querySelector('.portfolio-p .content-block').appendChild(cont3)
 })
 
 
