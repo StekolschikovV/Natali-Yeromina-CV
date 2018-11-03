@@ -81,18 +81,21 @@ portfolio.on('value', function (id) {
     let cont3 = document.createElement("div")
     cont3.classList.add('col-md-4')
 
-    let lastId = 3;
+    let lastId = 3
+    let index = 0
     id.forEach((el) => {
 
         // let cont = document.createElement("div")
         // cont.classList.add('col-md-4')
 
         let a = document.createElement("a")
+        let span = document.createElement("span")
         a.classList.add('portfolio-el')
+        a.dataset.index = index
         if (el.val().src)
             a.href = el.val().src
         if (el.val().title)
-            a.innerText = el.val().title;
+            span.innerText = el.val().title;
         if (el.val().tag)
             a.dataset.tag = el.val().tag
         if (el.val().img) {
@@ -100,8 +103,7 @@ portfolio.on('value', function (id) {
             img.src = el.val().img
             a.appendChild(img)
         }
-
-
+        a.appendChild(span)
         if (lastId == 1) {
             cont1.appendChild(a)
             lastId = 2
@@ -113,14 +115,14 @@ portfolio.on('value', function (id) {
             lastId = 1
         }
 
-
-        // document.querySelector('.portfolio-p .content-block').appendChild(cont)
-
+        index++
     });
 
     document.querySelector('.portfolio-p .content-block').appendChild(cont1)
     document.querySelector('.portfolio-p .content-block').appendChild(cont2)
     document.querySelector('.portfolio-p .content-block').appendChild(cont3)
+
+    portfolioClass.loadMoreShowHide()
 })
 
 
@@ -136,7 +138,9 @@ portfolioTags.on('value', function (id) {
 class Portfolio {
 
     constructor() {
+        this.loadMoreCount = 6
         this.selected = []
+        this.loadMoreShowHide()
     }
 
     showTags(tags) {
@@ -159,21 +163,25 @@ class Portfolio {
             this.selected.push(tag)
         else
             this.selected = this.selected.filter(function (e) { return e !== tag })
-
         this.hideShowEl()
         this.tagsIndicate()
     }
 
     hideShowEl() {
+
         let portfolioEl = document.querySelectorAll('.portfolio-el')
         let timeOutSec = 100
+        let loadMoreLocConut = 0
+
         portfolioEl.forEach((e, i) => {
             if (this.selected.length == 0) {
-                e.classList.add('show')
-                setTimeout(() => {
-                    e.classList.remove('hide')
-                    e.classList.remove('display-none')
-                }, timeOutSec)
+                    e.classList.add('show')
+                    setTimeout(() => {
+                        e.classList.remove('hide')
+                        e.classList.remove('display-none')
+                    }, timeOutSec)
+                    loadMoreLocConut++
+                
             } else {
                 if (!this.selected.includes(e.dataset.tag)) {
                     e.classList.remove('show')
@@ -192,23 +200,24 @@ class Portfolio {
                 }
             }
         })
+
         setTimeout(() => {
             let portfolioElsConts = document.querySelectorAll('.portfolio-p .content-block .col-md-4')
             for (let i = 0; i < portfolioElsConts.length; i++) {
                 let childNodes = portfolioElsConts[i].childNodes
                 let needHideCol = true
-                childNodes.forEach((e)=>{
-                    if(!e.classList.contains("hide")){
-                        needHideCol = false
-                    }
+                childNodes.forEach((e) => {
+                    if (!e.classList.contains("hide")) 
+                        needHideCol = false  
                 })
-                if(needHideCol)
+                if (needHideCol)
                     portfolioElsConts[i].classList.add('display-none')
                 else
                     portfolioElsConts[i].classList.remove('display-none')
             }
         }, timeOutSec * 2)
-
+        this.loadMoreCount = 6
+        this.loadMoreShowHide()
     }
 
     tagsIndicate() {
@@ -219,6 +228,25 @@ class Portfolio {
             else
                 e.classList.remove('selected')
         })
+    }
+
+    loadMoreShowHide() {
+        console.log(this.loadMoreCount)
+        let portfolioEl = document.querySelectorAll('.portfolio-el')
+        portfolioEl.forEach((e) => {
+            if (e.dataset.index > this.loadMoreCount) {
+                e.classList.add('loadMore-display-none')
+            } else {
+                e.classList.remove('loadMore-display-none')
+            }
+        })
+        if(portfolioEl.length > 0 && portfolioEl.length <= this.loadMoreCount )
+            document.querySelector('#loadMoreBtn').style.display = 'none'
+    }
+
+    loadMore() {
+        this.loadMoreCount += 6
+        this.loadMoreShowHide()
     }
 }
 
