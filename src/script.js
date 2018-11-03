@@ -102,18 +102,18 @@ portfolio.on('value', function (id) {
         }
 
 
-        if(lastId == 1){
+        if (lastId == 1) {
             cont1.appendChild(a)
             lastId = 2
-        } else if(lastId == 2){
+        } else if (lastId == 2) {
             cont2.appendChild(a)
-            lastId = 3 
-        } else if(lastId == 3){
+            lastId = 3
+        } else if (lastId == 3) {
             cont3.appendChild(a)
-            lastId = 1 
+            lastId = 1
         }
-           
-            
+
+
         // document.querySelector('.portfolio-p .content-block').appendChild(cont)
 
     });
@@ -159,37 +159,56 @@ class Portfolio {
             this.selected.push(tag)
         else
             this.selected = this.selected.filter(function (e) { return e !== tag })
+
         this.hideShowEl()
         this.tagsIndicate()
     }
 
     hideShowEl() {
         let portfolioEl = document.querySelectorAll('.portfolio-el')
+        let timeOutSec = 100
         portfolioEl.forEach((e, i) => {
             if (this.selected.length == 0) {
-                e.parentNode.classList.add('show')
+                e.classList.add('show')
                 setTimeout(() => {
-                    e.parentNode.classList.remove('hide')
-                    e.parentNode.classList.remove('display-none')
-                }, 500)
+                    e.classList.remove('hide')
+                    e.classList.remove('display-none')
+                }, timeOutSec)
             } else {
                 if (!this.selected.includes(e.dataset.tag)) {
-                    e.parentNode.classList.remove('show')
-                    e.parentNode.classList.add('hide')
+                    e.classList.remove('show')
+                    e.classList.add('hide')
                     setTimeout(() => {
-                        e.parentNode.classList.add('display-none')
-                    }, 500)
+                        e.classList.add('display-none')
+                    }, timeOutSec)
                 } else {
-                    if (e.parentNode.classList.contains("hide")) {
-                        e.parentNode.classList.add('show')
+                    if (e.classList.contains("hide")) {
+                        e.classList.add('show')
                         setTimeout(() => {
-                            e.parentNode.classList.remove('hide')
-                            e.parentNode.classList.remove('display-none')
-                        }, 500)
+                            e.classList.remove('hide')
+                            e.classList.remove('display-none')
+                        }, timeOutSec)
                     }
                 }
             }
         })
+        setTimeout(() => {
+            let portfolioElsConts = document.querySelectorAll('.portfolio-p .content-block .col-md-4')
+            for (let i = 0; i < portfolioElsConts.length; i++) {
+                let childNodes = portfolioElsConts[i].childNodes
+                let needHideCol = true
+                childNodes.forEach((e)=>{
+                    if(!e.classList.contains("hide")){
+                        needHideCol = false
+                    }
+                })
+                if(needHideCol)
+                    portfolioElsConts[i].classList.add('display-none')
+                else
+                    portfolioElsConts[i].classList.remove('display-none')
+            }
+        }, timeOutSec * 2)
+
     }
 
     tagsIndicate() {
