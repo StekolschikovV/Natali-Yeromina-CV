@@ -53,11 +53,10 @@ let titleText = (type, text) => {
     }, 300)
 }
 
-titleText(true, '')
+// titleText(true, '')
 
 
 toggleModal('.portfolio-p')
-
 
 // Initialize Firebase
 var config = {
@@ -74,6 +73,7 @@ var defaultDatabase = firebase.database();
 
 let portfolio = defaultDatabase.ref('portfolio')
 portfolio.on('value', function (id) {
+
     let cont1 = document.createElement("div")
     cont1.classList.add('col-md-4')
     let cont2 = document.createElement("div")
@@ -83,15 +83,14 @@ portfolio.on('value', function (id) {
 
     let lastId = 3
     let index = 0
-    id.forEach((el) => {
 
-        // let cont = document.createElement("div")
-        // cont.classList.add('col-md-4')
+    id.forEach((el) => {
 
         let a = document.createElement("a")
         let span = document.createElement("span")
         a.classList.add('portfolio-el')
         a.dataset.index = index
+
         if (el.val().src)
             a.href = el.val().src
         if (el.val().title)
@@ -116,6 +115,7 @@ portfolio.on('value', function (id) {
         }
 
         index++
+
     });
 
     document.querySelector('.portfolio-p .content-block').appendChild(cont1)
@@ -123,16 +123,21 @@ portfolio.on('value', function (id) {
     document.querySelector('.portfolio-p .content-block').appendChild(cont3)
 
     portfolioClass.loadMoreShowHide()
+
 })
 
 
 let portfolioTags = defaultDatabase.ref('portfolio-tags')
 portfolioTags.on('value', function (id) {
+
     let portfolioTagsList = []
+
     id.forEach((el) => {
         portfolioTagsList.push([el.val(), el.key])
     });
+
     portfolioClass.showTags(portfolioTagsList)
+
 })
 
 class Portfolio {
@@ -231,7 +236,6 @@ class Portfolio {
     }
 
     loadMoreShowHide() {
-        console.log(this.loadMoreCount)
         let portfolioEl = document.querySelectorAll('.portfolio-el')
         portfolioEl.forEach((e) => {
             if (e.dataset.index > this.loadMoreCount) {
