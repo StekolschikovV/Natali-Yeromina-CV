@@ -22,7 +22,7 @@ include ./mixins.jade
                         .col-md-12
                             textarea(rows="6", placeholder='MESSAGE').form-control
                         .col-md-12
-                            button.red-btn Submit
+                            button(type='button', data-toggle="modal", data-target="#contactModal").red-btn Submit
             .col-lg-2.col-xl-3.col-sm-1
             .col-lg-2.col-xl-3.col-sm-1
             .col-lg-8.col-xl-6.col-sm-10.margin-bottom-89
@@ -38,4 +38,17 @@ include ./mixins.jade
                             .title E-MAIL
                             .val NataliyaYeromina@gmai.com
             .col-lg-2.col-xl-3.col-sm-1
+
+            .col-md-12
+                #contactModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='contactModalCenterTitle', aria-hidden='true')
+                    .modal-dialog.modal-dialog-centered(role='document')
+                        .modal-content
+                            .modal-header
+                                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                                    span(aria-hidden='true') ×
+                            .modal-body 
+                                p Thank you 
+                                p for your letter
+                                p I will connect with you as soon as possible.
+        
     include footer.jade
