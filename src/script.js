@@ -283,7 +283,7 @@ document.querySelector('.strength-p').onscroll =  (e) => {
         isStart = true
         var elH1 = document.querySelector('#client-int .left h1');
         setValue(elH1, 0, 95, 400, 0)
-        var elH1 = document.querySelector('#client-int .right h1');
+        var elH1 = document.querySelector('#q .right h1');
         setValue(elH1, 0, 164, 400, 0)
     }
 
