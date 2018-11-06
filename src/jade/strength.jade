@@ -6,13 +6,13 @@ include ./mixins.jade
         .row
             //- ABOUT ME
             .col-lg-2.col-xl-3.col-sm-1
-            .col-lg-8.col-xl-6.col-sm-10.margin-bottom-4
+            .col-lg-8.col-xl-6.col-sm-10
                 .row
-                    .col-md-12.text-center
+                    .col-md-12.text-center.margin-bottom-55.margin-top-55
                         +page-title('WHAT I DO', 'TAKE A LOOK')
             .col-lg-2.col-xl-3.col-sm-1
             //- ICONS TOP
-            .col-md-12.margin-bottom-4.icons-top
+            .col-md-12.icons-top
                 .row
                     .col-lg-6.text-center.text-lg-left.skills-slider
                         img(src='img/serv1.jpg')
@@ -43,9 +43,9 @@ include ./mixins.jade
                                 h5.text-center.font-weight-bold Professional
                                 h5.text-center.font-weight-bold Preparation
                                 h5.text-center.font-weight-bold for printing
-            .col-md-12.margin-bottom-1.text-center 
+            .col-md-12.text-center.margin-top-89 
                 +page-title('Work skills', 'how i can')
-                ul.text-left.margin-top-1
+                ul.text-left.margin-top-55.margin-bottom-89 
                     li work with the entire marketing team to develop and transform sales, marketing and product positioning concepts;
                     li designing and creating of company logos and brand books;
                     li branding of corporate and public transportation;
@@ -58,16 +58,16 @@ include ./mixins.jade
                     li dressing of promo actions and places of sale;
                     li graphic design of facades, shop windows, shops (boutiques) and etc;
                     li ability to work against strict deadlines and deliver on time.
-    .container-fluid.padding-0.margin-bottom-4
+    .container-fluid.padding-0.margin-bottom-89 
         .row
             .col-md-12.padding-0 
                 img(src="./img/client_1s.png").width-100   
-    .container.skills-big-icons.margin-bottom-4
+    .container.skills-big-icons.margin-bottom-89
         .row
             .col-lg-2.col-xl-3.col-sm-1
-            .col-lg-8.col-xl-6.col-sm-10.margin-bottom-1
+            .col-lg-8.col-xl-6.col-sm-10
                 .row
-                    .col-md-12.text-center
+                    .col-md-12.text-center.margin-bottom-55
                         +page-title('MY SKILLS', 'how i can')
             .col-lg-2.col-xl-3.col-sm-1
                 
@@ -86,6 +86,21 @@ include ./mixins.jade
             .col-lg-2.col-md-2
     .container
          .row
-            .col.text-center.margin-bottom-1
+            .col.text-center.margin-bottom-55
                 +page-title('MY client', 'WORKED WITH')
+    .container#client-logo.margin-bottom-89
+        .row
+            .col-lg-1.col-md-0
+            .col-lg-10.col-md-12
+                .row
+                    .col-2.text-center.justify-content-center.align-self-center
+                        img(src="./img/c3.jpg")
+                    .col-4.text-center.justify-content-center.align-self-center
+                        img(src="./img/c1.jpg")  
+                    .col-3.text-center.justify-content-center.align-self-center  
+                        img(src="./img/c2.jpg") 
+                    .col-3.text-center.justify-content-center.align-self-center       
+                        img(src="./img/c4.jpg")  
+            .col-lg-1.col-md-0
+      
     include ./footer.jade            

@@ -2,33 +2,30 @@ include ./mixins.jade
 
 .about-p.content-block-full
     +back-arrow('fa-chevron-down', 'about-p')
-    .container
+    .container.margin-top-55
         .row
             //- ABOUT ME
             .col-lg-2.col-xl-3.col-sm-1
-            .col-lg-8.col-xl-6.col-sm-10.margin-bottom-4
+            .col-lg-8.col-xl-6.col-sm-10.margin-bottom-89
                 .row
                     .col-md-6.text-center.text-md-left
                         img(src='./img/stranch.png')
                     .col-md-6.text-center.text-md-left
                         +page-title('ABOUT ME', 'who i am')
-                        br
-                        br
-                        h6 I’m a Graphic designer with more than 12 years of professional experience in advertisement and marketing agencies. I created a variety of products of different complexity and style – from branding to billboards and business cards. I get my inspiration in new tasks,  so learning of new technologies and methodologies wouldn’t be a problem for me.
-                        br
+                        h6.margin-top-55 I’m a Graphic designer with more than 12 years of professional experience in advertisement and marketing agencies. I created a variety of products of different complexity and style – from branding to billboards and business cards. I get my inspiration in new tasks,  so learning of new technologies and methodologies wouldn’t be a problem for me.
                         button.red-btn DOWNLOAD
                         button.red-btn Hire Me
             .col-lg-2.col-xl-3.col-sm-1
             //- EXPERIENCE
             .col-lg-2.col-xl-3.col-sm-1
-            .col-lg-8.col-xl-6.col-sm-10.margin-bottom-1
+            .col-lg-8.col-xl-6.col-sm-10.margin-bottom-55
                 .row
                     .col.text-center
                         +page-title('EXPERIENCE', 'working')
             .col-lg-2.col-xl-3.col-sm-1
     
             .col-lg-2.col-xl-3.col-sm-1
-            .col-lg-8.col-xl-6.col-sm-10.line.margin-bottom-7
+            .col-lg-8.col-xl-6.col-sm-10.line.margin-bottom-119
                 .row
                     //- 2018
                     .col-md-6.text-center.text-md-right  
@@ -87,23 +84,24 @@ include ./mixins.jade
             .col-lg-2.col-xl-3.col-sm-1
             //- EDUCATION
             .col-lg-2.col-xl-3.col-sm-1
-            .col-lg-8.col-xl-6.col-sm-10.margin-bottom-05
+            .col-lg-8.col-xl-6.col-sm-10.margin-top-55
                 .row
-                    .col.text-center
+                    .col.text-center.margin-bottom-55
                         +page-title('EDUCATION', 'LEARNING')
             .col-lg-2.col-xl-3.col-sm-1
 
             .col-lg-2.col-xl-3.col-sm-1
-            .col-lg-8.col-xl-6.col-sm-10.margin-bottom-2.education-contant
-                .row
+            .col-lg-8.col-xl-6.col-sm-10.education-contant
+                .row.margin-bottom-89
                     .col.text-center.text-md-right 
                         h1.font-weight-bold 2009
                         hr.border-white
-                        h6.font-weight-bold.margin-bottom-0 Donetsk National University, Ukraine
+                        h6.font-weight-bold Donetsk National University, Ukraine
                         h6 Master of Applied Mathematics, Mathematical faculty, Applied Mathematics Specialty
                     .col.text-center.text-md-left 
                         h1.font-weight-bold 2015
                         hr
-                        h6.font-weight-bold.margin-bottom-0 Donetsk National University, Ukraine
+                        h6.font-weight-bold Donetsk National University, Ukraine
                         h6 Post-graduate student, Faculty of Mathematics and Informational Technology, Mechanics of a deformable solid
             .col-lg-2.col-xl-3.col-sm-1
+    include ./footer.jade
