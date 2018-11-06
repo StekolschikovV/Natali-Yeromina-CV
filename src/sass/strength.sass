@@ -32,3 +32,40 @@
   .skills-big-icons  
     img
       max-width: 100%
+  #client-int
+    position: relative
+    .left, .right
+      position: absolute
+      z-index: 1
+      i
+        font-size: 10vw
+        color: $color-text-main-min-light
+      .text
+        position: absolute
+        left: 90%
+        top: 0
+        bottom: 0
+        margin: auto
+        width: 100px
+        display: flex
+        flex-direction: column
+        // align-items: center
+        justify-content: center
+        *
+          line-height: 0.7
+        h1
+          color: white  
+          font-weight: bold
+        h6
+          color: $color-text-red
+        // max-width: 10vw
+    .left, .right
+      left: 20%
+      top: 0
+      bottom: 0
+      margin: auto
+      display: inline-table
+      // height: 100px
+    .right
+      left: auto
+      right: 30%

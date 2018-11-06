@@ -56,7 +56,7 @@ let titleText = (type, text) => {
 // titleText(true, '')
 
 
-// toggleModal('.portfolio-p')
+toggleModal('.strength-p')
 
 // Initialize Firebase
 var config = {
@@ -255,3 +255,36 @@ class Portfolio {
 }
 
 let portfolioClass = new Portfolio()
+
+
+
+// let clientInt = document.querySelector('#client-int')
+// console.log(clientInt.getBoundingClientRect().top);
+var setValue = (el, from, to, speed, x) =>{
+    if(from <= to){
+        setTimeout(()=>{
+            el.innerHTML = from;
+            from++
+            speed /= 1.01 * x
+            setValue(el, from, to, speed)
+            x++
+        }, speed)
+    }
+};
+
+
+let isStart = false
+document.querySelector('.strength-p').onscroll =  (e) => { 
+
+    let cont = document.querySelector('.strength-p').scrollTop
+    let el = document.querySelector('#client-int').getBoundingClientRect()
+
+    if(el.top < window.innerHeight && !isStart){
+        isStart = true
+        var elH1 = document.querySelector('#client-int .left h1');
+        setValue(elH1, 0, 95, 400, 0)
+        var elH1 = document.querySelector('#client-int .right h1');
+        setValue(elH1, 0, 164, 400, 0)
+    }
+
+ };
