@@ -1,25 +1,96 @@
 
+  
+
 class vSlider {
 
     constructor(param) {
-        this.paddingLeftDef = 10
-        this.paddingTopDef = 10
+        window.onload =()=>{
+            this.paddingLeftDef = 10
+            this.paddingTopDef = 10
+       
+            this.animateListIndex = 0
+    
+            this.imgs
+            this.parent
+    
+            this.param = param
+    
+            if(this.parameterCheck()){
+    
+           
+    
+                this.getSelectors()
+                this.setSizeAndPosition()
+                this.animate(this.imgs[this.imgs.length - 1], 150, 10, 90)
+    
+                console.log(this.imgs[this.imgs.length - 1].clientWidth)
+                this.animateList = [
+                    {
+                        selector: this.imgs[this.imgs.length - 1],
+                        posLeft: this.imgs[this.imgs.length - 1].clientWidth,
+                        posTop: 10,
+                        posY: 100,
+                        zIndex: this.imgs.length
+                    },
 
-        this.imgs
-        this.parent
-
-        this.param = param
-
-        if(this.parameterCheck()){
-            this.getSelectors()
-            this.setSizeAndPosition()
+                    {
+                        selector: this.imgs[this.imgs.length - 1],
+                        posLeft: this.imgs[this.imgs.length - 1].clientWidth,
+                        posTop: 10,
+                        posY: 100,
+                        zIndex: 0
+                    },
+                    {
+                        selector: this.imgs[this.imgs.length - 1],
+                        posLeft: 0,
+                        posTop: 10,
+                        posY: 180,
+                        zIndex: 0
+                    },
+                    {
+                        selector: this.imgs[this.imgs.length - 1],
+                        posLeft: `-${this.imgs[this.imgs.length - 1].clientWidth}`,
+                        posTop: 10,
+                        posY: 180,
+                        zIndex: 0
+                    },
+                    {
+                        selector: this.imgs[this.imgs.length - 1],
+                        posLeft: `-${this.imgs[this.imgs.length - 1].clientWidth}`,
+                        posTop: 10,
+                        posY: 180,
+                        zIndex: this.imgs.length
+                    },
+                ]
+    
+                  this.lineAnimate()
+            }
         }
+
+    }
+
+    lineAnimate(){
+        let step = this.animateList[this.animateListIndex]
+        console.log(this.animateListIndex)
+        this.animate(step.selector, step.posLeft, step.posTop, step.posY, step.zIndex)
+        setTimeout(()=>{
+            this.lineAnimate()
+            this.animateListIndex++
+            if(this.animateListIndex > this.imgs.length - 1){
+                this.animateListIndex = 0
+            }
+        },1000)
+    }
+
+    animate(el, posLeft, posTop, posY, zIndex){
+        // console.log(zIndex)
+        el.style.left = `${posLeft}px`
+        el.style.top = `${posTop}px`
+        el.style.zIndex = zIndex
+        el.style.transform = `rotateY(${posY}deg)`
     }
 
     setSizeAndPosition(){
-        console.log(this.parent.offsetWidth)
-        console.log(this.parent.offsetHeight)
-     
         let imgWidth = 0
         for(let i = 0; i < this.imgs.length; i++){
             let parentWidth = this.parent.offsetWidth
@@ -30,7 +101,8 @@ class vSlider {
             this.imgs[i].style.left = `${(this.param.paddingLeft * i) + (imgWidth > 0 ? (parentWidth - imgWidth) / 2 : 0) }px`
             this.imgs[i].style.bottom = `${this.param.paddingLeft * i}px`
             this.imgs[i].style.position = 'absolute'
-            console.log(this.param.paddingLeft * i)
+            this.imgs[i].style.transition = '1s'
+            this.imgs[i].style.zIndex = i
         }
         this.parent.style.position = 'relative'
         this.parent.style.height = `${this.imgs[0].offsetHeight + (this.param.paddingLeft * (this.imgs.length - 1))}px`
