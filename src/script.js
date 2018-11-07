@@ -293,5 +293,5 @@ document.querySelector('.strength-p').onscroll =  (e) => {
 
 
 
- let imgList = document.querySelectorAll('.strength-p .skills-slider img')
- console.log(imgList)
+//  let imgList = document.querySelectorAll('.strength-p .skills-slider img')
+//  console.log(imgList)
