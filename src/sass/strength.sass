@@ -38,12 +38,12 @@
       position: absolute
       z-index: 1
       i
-        font-size: 10vw
+        font-size: 6vw
         color: $color-text-main-min-light
       .text
         position: absolute
         left: 90%
-        top: 0
+        top: 1vw
         bottom: 0
         margin: auto
         width: 100px
@@ -52,7 +52,7 @@
         // align-items: center
         justify-content: center
         *
-          line-height: 0.7
+          line-height: 0.8
         h1
           color: white  
           font-weight: bold
@@ -60,7 +60,7 @@
           color: $color-text-red
         // max-width: 10vw
     .left, .right
-      left: 20%
+      left: 35%
       top: 0
       bottom: 0
       margin: auto
@@ -68,4 +68,27 @@
       // height: 100px
     .right
       left: auto
-      right: 30%
+      right: 35%
+
+
+@media (min-width: 1170px)
+  .strength-p
+    #client-int
+      .text
+        top: 5px !important
+      i
+        font-size: 75px !important
+
+@media (max-width: 1170px)    
+  .strength-p
+    #client-int
+      .left
+        left: 30%
+      .right
+        right: 30%
+
+@media (max-width: 750px)
+  .strength-p
+    #client-int
+      i
+        font-size: 50px !important
