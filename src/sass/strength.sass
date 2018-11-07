@@ -14,8 +14,33 @@
     max-width: 100%
   .icons-top
     .skills-slider
+      min-height: 390px
+      margin-top: calc(30px * 3) 
+      position: relative
       img 
+        left: 0
+        right: 0
+        margin: auto
         max-height: 340px
+        position: absolute
+        max-width: 60%
+        &:nth-child(1)
+          left: calc(-15px * 5) 
+          top: 0
+          z-index: 0
+        &:nth-child(2)  
+          left: calc(-5px * 5) 
+          top: calc(-10px * 3) 
+          z-index: 1
+        &:nth-child(3)  
+          left: calc(5px * 5)   
+          top: calc(-20px * 3) 
+          z-index: 2
+        &:nth-child(4)  
+          left: calc(15px * 5)  
+          top: calc(-30px * 3) 
+          z-index: 3
+
 
     .skills-icons
       // text-align: center !important

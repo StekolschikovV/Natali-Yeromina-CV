@@ -287,4 +287,11 @@ document.querySelector('.strength-p').onscroll =  (e) => {
         setValue(elH1, 0, 164, 400, 0)
     }
 
- };
+ }
+
+
+
+
+
+ let imgList = document.querySelectorAll('.strength-p .skills-slider img')
+ console.log(imgList)
