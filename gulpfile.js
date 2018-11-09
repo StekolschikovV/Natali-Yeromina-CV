@@ -87,7 +87,7 @@ gulp.task('scripts', function () {
         .pipe(concat('script.js'))
 
         .pipe(babel())
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest('./build/js'))
     .pipe(browserSync.reload({ stream: true }))
 });

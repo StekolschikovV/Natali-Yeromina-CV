@@ -1,1 +1,303 @@
-"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var _createClass=function(){function e(e,t){for(var i=0;i<t.length;i++){var s=t[i];s.enumerable=s.enumerable||!1,s.configurable=!0,"value"in s&&(s.writable=!0),Object.defineProperty(e,s.key,s)}}return function(t,i,s){return i&&e(t.prototype,i),s&&e(t,s),t}}(),toggleModal=function(e){var t=document.querySelector(e),i=t.classList.contains("show");navZIndex(i),t.classList.contains("show")?(t.classList.toggle("show"),setTimeout(function(){t.classList.toggle("display-block")},500)):(t.classList.toggle("display-block"),setTimeout(function(){t.classList.toggle("show")},0))},navZIndex=function(e){document.querySelectorAll("nav a").forEach(function(t){e?setTimeout(function(){t.style.zIndex=9,t.style.transition=".5s"},500):(t.style.zIndex=0,t.style.transition="0s")})},titleText=function e(t,i){document.querySelector(".h1-title").innerHTML=i;var s="I'm\n Natali Yeromina",o="I'm\n Graphic Design";setTimeout(function(){1==t&&i.length<s.length?e(!0,i+s[i.length]):1==t&&i.length>=s.length?e(!1,""):0==t&&i.length<o.length?e(!1,i+o[i.length]):e(!0,"")},300)};toggleModal(".strength-p");var config={apiKey:"AIzaSyA8bpN-HWexiOfk6uXYi3OLMnahw7xFE88",authDomain:"natali-yeromina.firebaseapp.com",databaseURL:"https://natali-yeromina.firebaseio.com",projectId:"natali-yeromina",storageBucket:"",messagingSenderId:"545859286062"};firebase.initializeApp(config);var defaultDatabase=firebase.database(),portfolio=defaultDatabase.ref("portfolio");portfolio.on("value",function(e){var t=document.createElement("div");t.classList.add("col-md-4");var i=document.createElement("div");i.classList.add("col-md-4");var s=document.createElement("div");s.classList.add("col-md-4");var o=3,n=0;e.forEach(function(e){var a=document.createElement("a"),l=document.createElement("span");if(a.classList.add("portfolio-el"),a.dataset.index=n,e.val().src&&(a.href=e.val().src),e.val().title&&(l.innerText=e.val().title),e.val().tag&&(a.dataset.tag=e.val().tag),e.val().img){var r=document.createElement("img");r.src=e.val().img,a.appendChild(r)}a.appendChild(l),1==o?(t.appendChild(a),o=2):2==o?(i.appendChild(a),o=3):3==o&&(s.appendChild(a),o=1),n++}),document.querySelector(".portfolio-p .content-block").appendChild(t),document.querySelector(".portfolio-p .content-block").appendChild(i),document.querySelector(".portfolio-p .content-block").appendChild(s),portfolioClass.loadMoreShowHide()});var portfolioTags=defaultDatabase.ref("portfolio-tags");portfolioTags.on("value",function(e){var t=[];e.forEach(function(e){t.push([e.val(),e.key])}),portfolioClass.showTags(t)});var Portfolio=function(){function e(){_classCallCheck(this,e),this.loadMoreCount=6,this.selected=[],this.loadMoreShowHide()}return _createClass(e,[{key:"showTags",value:function(e){e.forEach(function(e,t){var i=document.createElement("button");i.classList.add("btn"),i.setAttribute("type","button"),i.innerText=e[0],i.dataset.tag=e[1],i.addEventListener("click",function(){portfolioClass.click(e[0],e[1])}),document.querySelector("#tags").appendChild(i)})}},{key:"click",value:function(e,t){this.selected.includes(t)?this.selected=this.selected.filter(function(e){return e!==t}):this.selected.push(t),this.hideShowEl(),this.tagsIndicate()}},{key:"hideShowEl",value:function(){var e=this,t=document.querySelectorAll(".portfolio-el"),i=100,s=0;t.forEach(function(t,o){0==e.selected.length?(t.classList.add("show"),setTimeout(function(){t.classList.remove("hide"),t.classList.remove("display-none")},i),s++):e.selected.includes(t.dataset.tag)?t.classList.contains("hide")&&(t.classList.add("show"),setTimeout(function(){t.classList.remove("hide"),t.classList.remove("display-none")},i)):(t.classList.remove("show"),t.classList.add("hide"),setTimeout(function(){t.classList.add("display-none")},i))}),setTimeout(function(){for(var e=document.querySelectorAll(".portfolio-p .content-block .col-md-4"),t=0;t<e.length;t++){var i=e[t].childNodes,s=!0;i.forEach(function(e){e.classList.contains("hide")||(s=!1)}),s?e[t].classList.add("display-none"):e[t].classList.remove("display-none")}},2*i),this.loadMoreCount=6,this.loadMoreShowHide()}},{key:"tagsIndicate",value:function(){var e=this,t=document.querySelectorAll("#tags button");t.forEach(function(t,i){e.selected.includes(t.dataset.tag)?t.classList.add("selected"):t.classList.remove("selected")})}},{key:"loadMoreShowHide",value:function(){var e=this,t=document.querySelectorAll(".portfolio-el");t.forEach(function(t){t.dataset.index>e.loadMoreCount?t.classList.add("loadMore-display-none"):t.classList.remove("loadMore-display-none")}),t.length>0&&t.length<=this.loadMoreCount&&(document.querySelector("#loadMoreBtn").style.display="none")}},{key:"loadMore",value:function(){this.loadMoreCount+=6,this.loadMoreShowHide()}}]),e}(),portfolioClass=new Portfolio,setValue=function t(e,i,s,o,n){s>=i&&setTimeout(function(){e.innerHTML=i,i++,o/=1.01*n,t(e,i,s,o),n++},o)},isStart=!1;document.querySelector(".strength-p").onscroll=function(e){var t=(document.querySelector(".strength-p").scrollTop,document.querySelector("#client-int").getBoundingClientRect());if(t.top<window.innerHeight&&!isStart){isStart=!0;var i=document.querySelector("#client-int .left h1");setValue(i,0,95,400,0);var i=document.querySelector("#q .right h1");setValue(i,0,164,400,0)}};var vSlider=function(){function e(t){var i=this;_classCallCheck(this,e),window.onload=function(){i.paddingLeftDef=10,i.paddingTopDef=10,i.animateListIndex=0,i.imgs,i.parent,i.param=t,i.parameterCheck()&&(i.getSelectors(),i.setSizeAndPosition(),i.animate(i.imgs[i.imgs.length-1],150,10,90),console.log(i.imgs[i.imgs.length-1].clientWidth),i.animateList=[{selector:i.imgs[i.imgs.length-1],posLeft:i.imgs[i.imgs.length-1].clientWidth,posTop:10,posY:100,zIndex:i.imgs.length},{selector:i.imgs[i.imgs.length-1],posLeft:i.imgs[i.imgs.length-1].clientWidth,posTop:10,posY:100,zIndex:0},{selector:i.imgs[i.imgs.length-1],posLeft:0,posTop:10,posY:180,zIndex:0},{selector:i.imgs[i.imgs.length-1],posLeft:"-"+i.imgs[i.imgs.length-1].clientWidth,posTop:10,posY:180,zIndex:0},{selector:i.imgs[i.imgs.length-1],posLeft:"-"+i.imgs[i.imgs.length-1].clientWidth,posTop:10,posY:180,zIndex:i.imgs.length}],i.lineAnimate())}}return _createClass(e,[{key:"lineAnimate",value:function(){var e=this,t=this.animateList[this.animateListIndex];console.log(this.animateListIndex),this.animate(t.selector,t.posLeft,t.posTop,t.posY,t.zIndex),setTimeout(function(){e.lineAnimate(),e.animateListIndex++,e.animateListIndex>e.imgs.length-1&&(e.animateListIndex=0)},1e3)}},{key:"animate",value:function(e,t,i,s,o){e.style.left=t+"px",e.style.top=i+"px",e.style.zIndex=o,e.style.transform="rotateY("+s+"deg)"}},{key:"setSizeAndPosition",value:function(){for(var e=0,t=0;t<this.imgs.length;t++){var i=this.parent.offsetWidth,s=this.imgs[t].clientWidth;s>0&&(e=s),this.imgs[t].style.width=i-this.param.paddingLeft*this.imgs.length,this.imgs[t].style.left=this.param.paddingLeft*t+(e>0?(i-e)/2:0)+"px",this.imgs[t].style.bottom=this.param.paddingLeft*t+"px",this.imgs[t].style.position="absolute",this.imgs[t].style.transition="1s",this.imgs[t].style.zIndex=t}this.parent.style.position="relative",this.parent.style.height=this.imgs[0].offsetHeight+this.param.paddingLeft*(this.imgs.length-1)+"px",this.parent.style.background="red"}},{key:"getSelectors",value:function(){this.imgs=document.querySelectorAll(this.param.selector),this.parent=document.querySelector(this.param.selector).parentNode}},{key:"parameterCheck",value:function(){var e=!0;return this.param.selector||(this.log(0),e=!1),0==document.querySelectorAll(this.param.selector).length&&(this.log(1),e=!1),this.param["debugger"]&&(this.param.paddingTop||(this.log(101),this.param.paddingTop=this.paddingTopDef),this.param.paddingLeft||(this.log(102),this.param.paddingLeft=this.paddingLeftDef)),e}},{key:"log",value:function(e){0==e&&console.error("vSlider error: Missing parameter selector!"),1==e&&console.error("vSlider error: Elements do not exist!"),("101"==e||"102"==e)&&console.warn("vSlider error: Not indented. This will set the default indent.")}}]),e}();new vSlider({selector:".strength-p .skills-slider img","debugger":!0,paddingTop:10,paddingLeft:10});
+'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var toggleModal = function toggleModal(page) {
+
+    var selector = document.querySelector(page);
+    var isSelectorShow = selector.classList.contains('show');
+
+    navZIndex(isSelectorShow);
+
+    if (!selector.classList.contains('show')) {
+        selector.classList.toggle('display-block');
+        setTimeout(function () {
+            selector.classList.toggle('show');
+        }, 0);
+    } else {
+        selector.classList.toggle('show');
+        setTimeout(function () {
+            selector.classList.toggle('display-block');
+        }, 500);
+    }
+};
+
+var navZIndex = function navZIndex(status) {
+    document.querySelectorAll('nav a').forEach(function (e) {
+        if (status) {
+
+            setTimeout(function () {
+                e.style.zIndex = 9;
+                e.style.transition = '.5s';
+            }, 500);
+        } else {
+            e.style.zIndex = 0;
+            e.style.transition = '0s';
+        }
+    });
+};
+
+var titleText = function titleText(type, text) {
+    document.querySelector('.h1-title').innerHTML = text;
+    var textName = "I'm\n Natali Yeromina";
+    var textWork = "I'm\n Graphic Design";
+    setTimeout(function () {
+        if (type == true && text.length < textName.length) {
+            titleText(true, text + textName[text.length]);
+        } else if (type == true && text.length >= textName.length) {
+            titleText(false, '');
+        } else if (type == false && text.length < textWork.length) {
+            titleText(false, text + textWork[text.length]);
+        } else {
+            titleText(true, '');
+        }
+    }, 300);
+};
+
+// titleText(true, '')
+
+// toggleModal('.strength-p')
+
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyA8bpN-HWexiOfk6uXYi3OLMnahw7xFE88",
+    authDomain: "natali-yeromina.firebaseapp.com",
+    databaseURL: "https://natali-yeromina.firebaseio.com",
+    projectId: "natali-yeromina",
+    storageBucket: "",
+    messagingSenderId: "545859286062"
+};
+firebase.initializeApp(config);
+var defaultDatabase = firebase.database();
+
+var portfolio = defaultDatabase.ref('portfolio');
+portfolio.on('value', function (id) {
+
+    var cont1 = document.createElement("div");
+    cont1.classList.add('col-md-4');
+    var cont2 = document.createElement("div");
+    cont2.classList.add('col-md-4');
+    var cont3 = document.createElement("div");
+    cont3.classList.add('col-md-4');
+
+    var lastId = 3;
+    var index = 0;
+
+    id.forEach(function (el) {
+
+        var a = document.createElement("a");
+        var span = document.createElement("span");
+        a.classList.add('portfolio-el');
+        a.dataset.index = index;
+
+        if (el.val().src) a.href = el.val().src;
+        if (el.val().title) span.innerText = el.val().title;
+        if (el.val().tag) a.dataset.tag = el.val().tag;
+        if (el.val().img) {
+            var img = document.createElement("img");
+            img.src = el.val().img;
+            a.appendChild(img);
+        }
+        a.appendChild(span);
+        if (lastId == 1) {
+            cont1.appendChild(a);
+            lastId = 2;
+        } else if (lastId == 2) {
+            cont2.appendChild(a);
+            lastId = 3;
+        } else if (lastId == 3) {
+            cont3.appendChild(a);
+            lastId = 1;
+        }
+
+        index++;
+    });
+
+    document.querySelector('.portfolio-p .content-block').appendChild(cont1);
+    document.querySelector('.portfolio-p .content-block').appendChild(cont2);
+    document.querySelector('.portfolio-p .content-block').appendChild(cont3);
+
+    portfolioClass.loadMoreShowHide();
+});
+
+var portfolioTags = defaultDatabase.ref('portfolio-tags');
+portfolioTags.on('value', function (id) {
+
+    var portfolioTagsList = [];
+
+    id.forEach(function (el) {
+        portfolioTagsList.push([el.val(), el.key]);
+    });
+
+    portfolioClass.showTags(portfolioTagsList);
+});
+
+var Portfolio = (function () {
+    function Portfolio() {
+        _classCallCheck(this, Portfolio);
+
+        this.loadMoreCount = 6;
+        this.selected = [];
+        this.loadMoreShowHide();
+    }
+
+    _createClass(Portfolio, [{
+        key: 'showTags',
+        value: function showTags(tags) {
+            tags.forEach(function (e, i) {
+                var btn = document.createElement("button");
+                btn.classList.add('btn');
+
+                btn.setAttribute("type", "button");
+                btn.innerText = e[0];
+                btn.dataset.tag = e[1];
+                btn.addEventListener('click', function () {
+                    portfolioClass.click(e[0], e[1]);
+                });
+                document.querySelector('#tags').appendChild(btn);
+            });
+        }
+    }, {
+        key: 'click',
+        value: function click(text, tag) {
+            if (!this.selected.includes(tag)) this.selected.push(tag);else this.selected = this.selected.filter(function (e) {
+                return e !== tag;
+            });
+            this.hideShowEl();
+            this.tagsIndicate();
+        }
+    }, {
+        key: 'hideShowEl',
+        value: function hideShowEl() {
+            var _this = this;
+
+            var portfolioEl = document.querySelectorAll('.portfolio-el');
+            var timeOutSec = 100;
+            var loadMoreLocConut = 0;
+
+            portfolioEl.forEach(function (e, i) {
+                if (_this.selected.length == 0) {
+                    e.classList.add('show');
+                    setTimeout(function () {
+                        e.classList.remove('hide');
+                        e.classList.remove('display-none');
+                    }, timeOutSec);
+                    loadMoreLocConut++;
+                } else {
+                    if (!_this.selected.includes(e.dataset.tag)) {
+                        e.classList.remove('show');
+                        e.classList.add('hide');
+                        setTimeout(function () {
+                            e.classList.add('display-none');
+                        }, timeOutSec);
+                    } else {
+                        if (e.classList.contains("hide")) {
+                            e.classList.add('show');
+                            setTimeout(function () {
+                                e.classList.remove('hide');
+                                e.classList.remove('display-none');
+                            }, timeOutSec);
+                        }
+                    }
+                }
+            });
+
+            setTimeout(function () {
+                var portfolioElsConts = document.querySelectorAll('.portfolio-p .content-block .col-md-4');
+                for (var i = 0; i < portfolioElsConts.length; i++) {
+                    var childNodes = portfolioElsConts[i].childNodes;
+                    var needHideCol = true;
+                    childNodes.forEach(function (e) {
+                        if (!e.classList.contains("hide")) needHideCol = false;
+                    });
+                    if (needHideCol) portfolioElsConts[i].classList.add('display-none');else portfolioElsConts[i].classList.remove('display-none');
+                }
+            }, timeOutSec * 2);
+            this.loadMoreCount = 6;
+            this.loadMoreShowHide();
+        }
+    }, {
+        key: 'tagsIndicate',
+        value: function tagsIndicate() {
+            var _this2 = this;
+
+            var btn = document.querySelectorAll('#tags button');
+            btn.forEach(function (e, i) {
+                if (_this2.selected.includes(e.dataset.tag)) e.classList.add('selected');else e.classList.remove('selected');
+            });
+        }
+    }, {
+        key: 'loadMoreShowHide',
+        value: function loadMoreShowHide() {
+            var _this3 = this;
+
+            var portfolioEl = document.querySelectorAll('.portfolio-el');
+            portfolioEl.forEach(function (e) {
+                if (e.dataset.index > _this3.loadMoreCount) {
+                    e.classList.add('loadMore-display-none');
+                } else {
+                    e.classList.remove('loadMore-display-none');
+                }
+            });
+            if (portfolioEl.length > 0 && portfolioEl.length <= this.loadMoreCount) document.querySelector('#loadMoreBtn').style.display = 'none';
+        }
+    }, {
+        key: 'loadMore',
+        value: function loadMore() {
+            this.loadMoreCount += 6;
+            this.loadMoreShowHide();
+        }
+    }]);
+
+    return Portfolio;
+})();
+
+var portfolioClass = new Portfolio();
+
+// let clientInt = document.querySelector('#client-int')
+// console.log(clientInt.getBoundingClientRect().top);
+var setValue = function setValue(el, from, to, speed, x) {
+    if (from <= to) {
+        setTimeout(function () {
+            el.innerHTML = from;
+            from++;
+            speed /= 1.01 * x;
+            setValue(el, from, to, speed);
+            x++;
+        }, speed);
+    }
+};
+
+var isStart = false;
+document.querySelector('.strength-p').onscroll = function (e) {
+
+    var cont = document.querySelector('.strength-p').scrollTop;
+    var el = document.querySelector('#client-int').getBoundingClientRect();
+
+    if (el.top < window.innerHeight && !isStart) {
+        isStart = true;
+        var elH1 = document.querySelector('#client-int .left h1');
+        setValue(elH1, 0, 95, 400, 0);
+        var elH1 = document.querySelector('#q .right h1');
+        setValue(elH1, 0, 164, 400, 0);
+    }
+};
+
+var skillsSliderImg = document.querySelectorAll('.skills-slider img');
+var skillsSliderAnim = function skillsSliderAnim(index) {
+    skillsSliderImg.forEach(function (e) {
+        e.classList.remove('anim');
+    });
+    skillsSliderImg[index].classList.add('anim');
+    setTimeout(function () {
+        index++;
+        if (index + 2 > skillsSliderImg.length) {
+            skillsSliderAnim(0);
+        } else {
+            skillsSliderAnim(index);
+        }
+    }, 10000);
+};
+skillsSliderAnim(0);

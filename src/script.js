@@ -56,7 +56,7 @@ let titleText = (type, text) => {
 // titleText(true, '')
 
 
-toggleModal('.strength-p')
+// toggleModal('.strength-p')
 
 // Initialize Firebase
 var config = {
@@ -291,7 +291,20 @@ document.querySelector('.strength-p').onscroll =  (e) => {
 
 
 
+let skillsSliderImg = document.querySelectorAll('.skills-slider img')
+let skillsSliderAnim = (index) => {
+    skillsSliderImg.forEach((e)=>{
+        e.classList.remove('anim')
+    })
+    skillsSliderImg[index].classList.add('anim')
+    setTimeout(()=>{
+        index++
+        if(index + 2 > skillsSliderImg.length){
+            skillsSliderAnim(0)
+        } else{
+            skillsSliderAnim(index)
+        }
+    }, 10000)
+}
+skillsSliderAnim(0)
 
-
-//  let imgList = document.querySelectorAll('.strength-p .skills-slider img')
-//  console.log(imgList)
