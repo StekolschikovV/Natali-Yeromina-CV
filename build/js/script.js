@@ -41,8 +41,8 @@ var navZIndex = function navZIndex(status) {
 
 var titleText = function titleText(type, text) {
     document.querySelector('.h1-title').innerHTML = text;
-    var textName = "I'm\n Natali Yeromina";
-    var textWork = "I'm\n Graphic Design";
+    var textName = "I'm\n Natalia Yeromina";
+    var textWork = "I'm\n Graphic Designer";
     setTimeout(function () {
         if (type == true && text.length < textName.length) {
             titleText(true, text + textName[text.length]);
@@ -56,7 +56,7 @@ var titleText = function titleText(type, text) {
     }, 300);
 };
 
-// titleText(true, '')
+titleText(true, '');
 
 // toggleModal('.strength-p')
 
@@ -256,8 +256,6 @@ var Portfolio = (function () {
 
 var portfolioClass = new Portfolio();
 
-// let clientInt = document.querySelector('#client-int')
-// console.log(clientInt.getBoundingClientRect().top);
 var setValue = function setValue(el, from, to, speed, x) {
     if (from <= to) {
         setTimeout(function () {
@@ -280,8 +278,8 @@ document.querySelector('.strength-p').onscroll = function (e) {
         isStart = true;
         var elH1 = document.querySelector('#client-int .left h1');
         setValue(elH1, 0, 95, 400, 0);
-        var elH1 = document.querySelector('#q .right h1');
-        setValue(elH1, 0, 164, 400, 0);
+        var elH2 = document.querySelector('#client-int .right h1');
+        setValue(elH2, 0, 164, 400, 0);
     }
 };
 

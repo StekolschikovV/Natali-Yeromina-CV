@@ -53,7 +53,7 @@ let titleText = (type, text) => {
     }, 300)
 }
 
-// titleText(true, '')
+titleText(true, '')
 
 
 // toggleModal('.strength-p')
@@ -257,9 +257,6 @@ class Portfolio {
 let portfolioClass = new Portfolio()
 
 
-
-// let clientInt = document.querySelector('#client-int')
-// console.log(clientInt.getBoundingClientRect().top);
 var setValue = (el, from, to, speed, x) =>{
     if(from <= to){
         setTimeout(()=>{
@@ -283,8 +280,8 @@ document.querySelector('.strength-p').onscroll =  (e) => {
         isStart = true
         var elH1 = document.querySelector('#client-int .left h1');
         setValue(elH1, 0, 95, 400, 0)
-        var elH1 = document.querySelector('#q .right h1');
-        setValue(elH1, 0, 164, 400, 0)
+        var elH2 = document.querySelector('#client-int .right h1');
+        setValue(elH2, 0, 164, 400, 0)
     }
 
  }
