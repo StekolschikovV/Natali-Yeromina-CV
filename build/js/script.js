@@ -299,3 +299,13 @@ var skillsSliderAnim = function skillsSliderAnim(index) {
     }, 10000);
 };
 skillsSliderAnim(0);
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+    window.onload = () => {
+    setTimeout(function(){
+        document.querySelector('.preloader').style.display = 'none'
+    }, 3000);
+
+}
+// , true);
