@@ -307,9 +307,8 @@ skillsSliderAnim(0)
 
 // document.addEventListener('DOMContentLoaded', function() {
 window.onload = () => {
-    setTimeout(function(){
+    // setTimeout(function(){
         document.querySelector('.preloader').style.display = 'none'
-    }, 3000);
-
+    // }, 3000);
 }
 // , true);
