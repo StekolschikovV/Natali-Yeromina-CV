@@ -303,12 +303,14 @@ let skillsSliderAnim = (index) => {
         }
     }, 10000)
 }
-skillsSliderAnim(0)
 
-// document.addEventListener('DOMContentLoaded', function() {
+
 window.onload = () => {
-    // setTimeout(function(){
-        document.querySelector('.preloader').style.display = 'none'
-    // }, 3000);
+    document.querySelector('.preloader').style.display = 'none'
+
+    $('#Carousel').carousel({
+        interval: 5000
+    })
+
+    skillsSliderAnim(0)
 }
-// , true);

@@ -24,7 +24,7 @@ include ./mixins.jade
                         .row.skills-icons.text-center
                             .col-sx-4.text-center
                                 img(src='./img/Icone_1.png')
-                                h5.text-center.font-weight-bold Logo 
+                                h5.text-center.font-weight-bold Logo
                                 h5.text-center.font-weight-bold Design
                             .col-sx-4.text-center
                                 img(src='./img/Icone_2.png')
@@ -32,7 +32,7 @@ include ./mixins.jade
                                 h5.text-center.font-weight-bold Design
                             .col-sx-4.text-center
                                 img(src='./img/Icone_3.png')
-                                h5.text-center.font-weight-bold Graphic 
+                                h5.text-center.font-weight-bold Graphic
                                 h5.text-center.font-weight-bold Design
                             .col-sx-4.text-center
                                 img(src='./img/Icone_4.png')
@@ -47,9 +47,9 @@ include ./mixins.jade
                                 h5.text-center.font-weight-bold Professional
                                 h5.text-center.font-weight-bold Preparation
                                 h5.text-center.font-weight-bold for printing
-            .col-md-12.text-center.margin-top-89 
+            .col-md-12.text-center.margin-top-89
                 +page-title('Work skills', 'how i can')
-                ul.text-left.margin-top-55.margin-bottom-89 
+                ul.text-left.margin-top-55.margin-bottom-89
                     li work with the entire marketing team to develop and transform sales, marketing and product positioning concepts;
                     li designing and creating of company logos and brand books;
                     li branding of corporate and public transportation;
@@ -62,16 +62,16 @@ include ./mixins.jade
                     li dressing of promo actions and places of sale;
                     li graphic design of facades, shop windows, shops (boutiques) and etc;
                     li ability to work against strict deadlines and deliver on time.
-    .container-fluid.padding-0.margin-bottom-89 
+    .container-fluid.padding-0.margin-bottom-89
         .row
             .col-md-12.padding-0#client-int
-                img(src="./img/client_1s.png").width-100   
+                img(src="./img/client_1s.png").width-100
                 .left
                     i.far.fa-smile
                     .text
                         h1 95
                         h6 Happy Clients
-                .right 
+                .right
                     i.far.fa-check-circle
                     .text
                         h1 164
@@ -85,17 +85,17 @@ include ./mixins.jade
                     .col-md-12.text-center.margin-bottom-55
                         +page-title('MY SKILLS', 'how i can')
             .col-lg-2.col-xl-3.col-sm-1
-                
+
             .col-lg-2.col-md-2.col-sm-0
             .col-lg-2.col-md-2.col-sm-2.text-center
                 img(src="./img/Ps.png")
-            .d-lg-none.d-md-none.col-sm-1    
+            .d-lg-none.d-md-none.col-sm-1
             .col-lg-2.col-md-2.col-sm-2.text-center
                 img(src="./img/Ai.png")
-            .d-lg-none.d-md-none.col-sm-1     
+            .d-lg-none.d-md-none.col-sm-1
             .col-lg-2.col-md-2.col-sm-2.text-center
                 img(src="./img/ID.png")
-            .d-lg-none.d-md-none.col-sm-1 
+            .d-lg-none.d-md-none.col-sm-1
             .col-lg-2.col-md-2.col-sm-2.text-center
                 img(src="./img/Cr.png")
             .col-lg-2.col-md-2
@@ -103,19 +103,17 @@ include ./mixins.jade
          .row
             .col.text-center.margin-bottom-55
                 +page-title('MY client', 'WORKED WITH')
-    .container#client-logo.margin-bottom-89
-        .row
-            .col-lg-1.col-md-0
-            .col-lg-10.col-md-12
-                .row
-                    .col-2.text-center.justify-content-center.align-self-center
-                        img(src="./img/c3.jpg")
-                    .col-4.text-center.justify-content-center.align-self-center
-                        img(src="./img/c1.jpg")  
-                    .col-3.text-center.justify-content-center.align-self-center  
-                        img(src="./img/c2.jpg") 
-                    .col-3.text-center.justify-content-center.align-self-center       
-                        img(src="./img/c4.jpg")  
-            .col-lg-1.col-md-0
-      
+
+    .container-flud.margin-bottom-89
+        #demo.carousel.slide(data-ride='carousel')
+            .carousel-inner.no-padding
+                +carousel-item('active','./img/client/1.jpg', './img/client/2.jpg', './img/client/3.jpg', './img/client/4.jpg')
+                +carousel-item('','./img/client/5.jpg', './img/client/6.jpg', './img/client/7.jpg', './img/client/8.jpg')
+                +carousel-item('','./img/client/9.jpg', './img/client/10.jpg', './img/client/11.jpg', './img/client/12.jpg')
+            a.carousel-control-prev(href='#demo', data-slide='prev')
+                i.fa.fa-arrow-left(aria-hidden='true')
+
+            a.carousel-control-next(href='#demo', data-slide='next')
+                i.fa.fa-arrow-right(aria-hidden='true')
+
     include ./footer.jade            

@@ -10,3 +10,18 @@ mixin back-arrow(arrowClass, pageClass)
         .row
             .col-md-12.text-right 
                 i.fa(aria-hidden='true', class=arrowClass, onclick="toggleModal('." + pageClass + "')")
+
+mixin carousel-item(topClass, img1, img2, img3, img4)
+    .carousel-item.text-center(class=topClass)
+        .col-xs-3.col-sm-3.col-md-3
+            a.slider_info(href='#')
+                img.img-fluid.card-img-top(src='' + img1 + '')
+        .col-xs-3.col-sm-3.col-md-3
+            a.slider_info(href='#', onclick='abc(this)')
+                img.img-fluid.card-img-top(src='' + img2 + '')
+        .col-xs-3.col-sm-3.col-md-3
+            a.slider_info(href='#', onclick='abc(this)')
+                img.img-fluid.card-img-top(src='' + img3 + '')
+        .col-xs-3.col-sm-3.col-md-3
+            a.slider_info(href='#', onclick='abc(this)')
+                img.img-fluid.card-img-top(src='' + img4 + '')
