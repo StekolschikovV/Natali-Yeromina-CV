@@ -41,8 +41,8 @@ var navZIndex = function navZIndex(status) {
 
 var titleText = function titleText(type, text) {
     document.querySelector('.h1-title').innerHTML = text;
-    var textName = "I'm\n Natalia Yeromina";
-    var textWork = "I'm\n Graphic Designer";
+    var textName = "I'm\n Natali Yeromina";
+    var textWork = "I'm\n Graphic Design";
     setTimeout(function () {
         if (type == true && text.length < textName.length) {
             titleText(true, text + textName[text.length]);
@@ -300,12 +300,10 @@ var skillsSliderAnim = function skillsSliderAnim(index) {
 };
 skillsSliderAnim(0);
 
-
 // document.addEventListener('DOMContentLoaded', function() {
-    window.onload = () => {
-    setTimeout(function(){
-        document.querySelector('.preloader').style.display = 'none'
+window.onload = function () {
+    setTimeout(function () {
+        document.querySelector('.preloader').style.display = 'none';
     }, 3000);
-
-}
+};
 // , true);
