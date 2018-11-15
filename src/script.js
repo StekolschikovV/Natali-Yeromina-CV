@@ -56,7 +56,7 @@ let titleText = (type, text) => {
 titleText(true, '')
 
 
-toggleModal('.strength-p')
+// toggleModal('.strength-p')
 
 // Initialize Firebase
 var config = {
@@ -164,12 +164,15 @@ class Portfolio {
     }
 
     click(text, tag) {
+        let portfolioEl = document.querySelectorAll('.portfolio-el')
+        this.loadMoreCount = portfolioEl.length + 1
         if (!this.selected.includes(tag))
             this.selected.push(tag)
         else
             this.selected = this.selected.filter(function (e) { return e !== tag })
         this.hideShowEl()
         this.tagsIndicate()
+        this.loadMoreShowHide()
     }
 
     hideShowEl() {
@@ -244,7 +247,7 @@ class Portfolio {
                 e.classList.remove('loadMore-display-none')
             }
         })
-        if(portfolioEl.length > 0 && portfolioEl.length <= this.loadMoreCount )
+        if(portfolioEl.length > 0 && portfolioEl.length <= this.loadMoreCount + 1 )
             document.querySelector('#loadMoreBtn').style.display = 'none'
     }
 
