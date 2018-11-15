@@ -317,3 +317,33 @@ window.onload = () => {
 
     skillsSliderAnim(0)
 }
+
+
+document.querySelector('form').addEventListener('submit', () => {
+    // console.log( $( 'form' ).serialize() )
+    $('#contactModal').modal('show');
+
+    var formData = new FormData();
+
+    // добавить к пересылке ещё пару ключ - значение
+    // formData.append("mes", encodeURI( $( 'form' ).serialize() ));
+    //
+    // // отослать
+    // var xhr = new XMLHttpRequest();
+    // xhr.open("POST", "./send_form_email.php");
+    // xhr.send(formData);
+    //
+
+
+
+
+    $.ajax({
+        type: "POST",
+        url: "./send_form_email.php",
+        data: $( 'form' ).serialize(),
+        dataType: "html"
+    });
+
+
+})
+

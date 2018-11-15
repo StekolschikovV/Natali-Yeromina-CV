@@ -11,18 +11,19 @@ include ./mixins.jade
                 h4 HOW I CAN HELP YOU?
             .col-lg-2.col-xl-3.col-sm-1
             .col-lg-8.col-xl-6.col-sm-10
-                form.margin-bottom-89
+                form(onsubmit="return false;").margin-bottom-89
                     .form-row
                         .col-md-6
-                            input(type='text', placeholder='YOUR NAME').form-control
+                            input(type='text', name='NAME', placeholder='YOUR NAME', required).form-control
                         .col-md-6
-                            input(type='text', placeholder='YOUR E-MAIL').form-control
+                            input(type='text', name='E-MAIL', placeholder='YOUR E-MAIL', required).form-control
                         .col-md-12
-                            input(type='text', placeholder='SUBJECT').form-control
+                            input(type='text', name='SUBJECT', placeholder='SUBJECT', required).form-control
                         .col-md-12
-                            textarea(rows="6", placeholder='MESSAGE').form-control
+                            textarea(rows="6", name='MESSAGE', placeholder='MESSAGE', required).form-control
                         .col-md-12
-                            button(type='button', data-toggle="modal", data-target="#contactModal").red-btn Submit
+                            //button(type='submit', data-toggle="modal", data-target="#contactModal").red-btn Submit
+                            button(type='submit').red-btn Submit
             .col-lg-2.col-xl-3.col-sm-1
             .col-lg-2.col-xl-3.col-sm-1
             .col-lg-8.col-xl-6.col-sm-10.margin-bottom-89
