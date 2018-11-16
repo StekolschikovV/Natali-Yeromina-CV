@@ -1,0 +1,38 @@
+/*
+Error: The line was indented 2 levels deeper than the previous line.
+        on line 146 of style.sass
+
+141: @import "./sass/socialButtons.sass"
+142: @import "./sass/footer.sass"
+143: 
+144: .btn:focus,.btn:active:focus,.btn.active:focus,
+145: .btn.focus,.btn:active.focus,.btn.active.focus 
+146:     outline: none !important
+147:     box-shadow: none
+148: 
+149: .display-none, .loadMore-display-none
+150:   display: none !important
+
+Backtrace:
+style.sass:146
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/engine.rb:523:in `tree'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/engine.rb:412:in `_to_tree'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/engine.rb:384:in `_render_with_sourcemap'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/engine.rb:301:in `render_with_sourcemap'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:209:in `each'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/plugin.rb:82:in `update_stylesheets'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/exec/base.rb:52:in `parse'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/exec/base.rb:19:in `parse!'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:23:in `load'
+/usr/local/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: The line was indented 2 levels deeper than the previous line.\A         on line 146 of style.sass\A \A 141: @import \"./sass/socialButtons.sass\"\A 142: @import \"./sass/footer.sass\"\A 143: \A 144: .btn:focus,.btn:active:focus,.btn.active:focus,\A 145: .btn.focus,.btn:active.focus,.btn.active.focus \A 146:     outline: none !important\A 147:     box-shadow: none\A 148: \A 149: .display-none, .loadMore-display-none\A 150:   display: none !important"; }

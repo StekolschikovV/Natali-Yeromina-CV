@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+* {
+  font-family: Open Sans; }
+
+h1 {
+  font-size: 45px; }
+
+h5 {
+  font-size: 14px; }
+
+h4 {
+  font-size: 16px; }
+
+h6 {
+  font-size: 12px; }
+
+body {
+  padding: 0;
+  margin: 0; }
+
+@keyframes preloaderHide {
+  0% {
+    display: block;
+    opacity: 1; }
+  80% {
+    opacity: 0; }
+  100% {
+    display: none; } }
+#preloader {
+  user-select: none;
+  opacity: 0;
+  background: #fff;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  #preloader #preloaderImg {
+    user-select: none;
+    width: 10em;
+    height: 10em;
+    background: red;
+    background: url("./img/preloader.svg") no-repeat;
+    background-size: contain; }
+
+.preloaderHide {
+  animation: preloaderHide 2s alternate; }
+
+/*# sourceMappingURL=styles.css.map */
