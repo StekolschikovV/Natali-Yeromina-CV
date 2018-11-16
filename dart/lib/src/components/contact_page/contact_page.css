@@ -1,4 +1,4 @@
-.about-p {
+.contact-p {
   transition: 0.5s;
   width: 100vw;
   height: 100vh;
@@ -6,10 +6,10 @@
   background: white;
   position: fixed;
   left: 0;
-  top: -100vh;
+  top: 100vh;
   z-index: 9; }
 
-.about-p.show {
+.contact-p.show {
   transition: 0.5s;
   width: 100vw;
   height: 100vh;
@@ -20,4 +20,4 @@
   top: 0vh;
   z-index: 9; }
 
-/*# sourceMappingURL=about_page.css.map */
+/*# sourceMappingURL=contact_page.css.map */

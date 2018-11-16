@@ -1,29 +1,34 @@
 import 'package:angular/angular.dart';
 import 'dart:html';
-
+import '../abstract_page.dart';
 import 'dart:async';
 import 'dart:html';
 import '../../../events.dart';
 
 @Component(
-  selector: 'about-page',
-  styleUrls: ['about_page.css'],
-  templateUrl: 'about_page.html',
+  selector: 'strength-page',
+  styleUrls: ['strength_page.css'],
+  templateUrl: 'strength_page.html',
 )
-class AboutPage {
+class StrengthPage {
 
   bool show = false;
 
   StreamSubscription subscription;
 
-  AboutPage(){
+  StrengthPage(){
+    pageListen();
+  }
+
+  void pageListen(){
     eventBus.on<Nav>().listen((event) {
-      event.nowPage == Page.About ? show = true : show = false;
+      event.nowPage == Page.Strength ? show = true : show = false;
     });
   }
 
   void pageClose(){
     eventBus.fire(new Nav(null));
   }
+
 
 }

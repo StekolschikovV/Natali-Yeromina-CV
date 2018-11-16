@@ -1,15 +1,15 @@
-.about-p {
+.portfolio-p {
   transition: 0.5s;
   width: 100vw;
   height: 100vh;
   overflow: auto;
   background: white;
   position: fixed;
-  left: 0;
-  top: -100vh;
+  left: -100vw;
+  top: 0vh;
   z-index: 9; }
 
-.about-p.show {
+.portfolio-p.show {
   transition: 0.5s;
   width: 100vw;
   height: 100vh;
@@ -20,4 +20,4 @@
   top: 0vh;
   z-index: 9; }
 
-/*# sourceMappingURL=about_page.css.map */
+/*# sourceMappingURL=portfolio_page.css.map */

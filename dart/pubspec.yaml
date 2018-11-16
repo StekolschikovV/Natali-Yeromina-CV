@@ -11,6 +11,7 @@ dependencies:
   angular: ^5.0.0
   angular_components: ^0.9.0
   html: any
+  event_bus: ^1.0.1
 dev_dependencies:
   angular_test: ^2.0.0
   build_runner: ^0.10.0

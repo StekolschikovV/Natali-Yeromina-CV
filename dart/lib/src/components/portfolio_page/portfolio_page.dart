@@ -1,24 +1,28 @@
 import 'package:angular/angular.dart';
 import 'dart:html';
-
+import '../abstract_page.dart';
 import 'dart:async';
 import 'dart:html';
 import '../../../events.dart';
 
 @Component(
-  selector: 'about-page',
-  styleUrls: ['about_page.css'],
-  templateUrl: 'about_page.html',
+  selector: 'portfolio-page',
+  styleUrls: ['portfolio_page.css'],
+  templateUrl: 'portfolio_page.html',
 )
-class AboutPage {
+class PortfolioPage implements AbstractPage {
 
   bool show = false;
 
   StreamSubscription subscription;
 
-  AboutPage(){
+  PortfolioPage(){
+    pageListen();
+  }
+
+  void pageListen(){
     eventBus.on<Nav>().listen((event) {
-      event.nowPage == Page.About ? show = true : show = false;
+      event.nowPage == Page.Portfolio ? show = true : show = false;
     });
   }
 

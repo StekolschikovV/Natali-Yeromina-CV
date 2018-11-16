@@ -56,5 +56,36 @@
 @media (max-width: 400px) {
   .mainImg {
     display: none !important; } }
+.h1-title-block {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .h1-title-block .h1-title {
+    font-size: 8em;
+    font-weight: bold;
+    line-height: 1;
+    position: relative;
+    color: #bbbbbb;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: url(../img/111I.png);
+    background-size: cover;
+    background-repeat: no-repeat; }
+
+@media (max-width: 991px) {
+  .h1-title-block {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 5em; } }
+@media (max-width: 500px) {
+  .h1-title-block .h1-title {
+    font-size: 3em; } }
+.show .page-controls {
+  display: flex !important; }
+
+.display-block {
+  display: block !important; }
 
 /*# sourceMappingURL=index_page.css.map */

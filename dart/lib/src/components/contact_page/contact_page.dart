@@ -4,26 +4,32 @@ import 'dart:html';
 import 'dart:async';
 import 'dart:html';
 import '../../../events.dart';
+import '../abstract_page.dart';
 
 @Component(
-  selector: 'about-page',
-  styleUrls: ['about_page.css'],
-  templateUrl: 'about_page.html',
+  selector: 'contact-page',
+  styleUrls: ['contact_page.css'],
+  templateUrl: 'contact_page.html',
 )
-class AboutPage {
+class ContactPage implements AbstractPage{
 
   bool show = false;
 
   StreamSubscription subscription;
 
-  AboutPage(){
+  ContactPage(){
+    pageListen();
+  }
+
+  void pageListen(){
     eventBus.on<Nav>().listen((event) {
-      event.nowPage == Page.About ? show = true : show = false;
+      event.nowPage == Page.Contact ? show = true : show = false;
     });
   }
 
   void pageClose(){
     eventBus.fire(new Nav(null));
   }
+
 
 }

@@ -1,6 +1,9 @@
 import 'package:angular/angular.dart';
 import './src/components/index_page/index_page.dart';
 import './src/components/about_page/about_page.dart';
+import './src/components/portfolio_page/portfolio_page.dart';
+import './src/components/strength_page/strength_page.dart';
+import './src/components/contact_page/contact_page.dart';
 import 'dart:html';
 import 'dart:async';
 
@@ -8,7 +11,7 @@ import 'dart:async';
   selector: 'my-app',
   styleUrls: ['app_component.css'],
   templateUrl: 'app_component.html',
-  directives: [IndexPage, AboutPage],
+  directives: [IndexPage, AboutPage, PortfolioPage, StrengthPage, ContactPage],
 )
 class AppComponent implements AfterViewInit  {
 
