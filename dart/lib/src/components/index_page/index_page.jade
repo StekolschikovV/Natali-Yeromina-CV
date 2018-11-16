@@ -1,0 +1,11 @@
+.index-p
+    nav
+        a(href='#about', onclick="toggleModal('.about-p')").top about
+        a(href='#strength', onclick="toggleModal('.strength-p')").right strength
+        a(href='#contact', onclick="toggleModal('.contact-p')").bottom contact
+        a(href='#portfolio', onclick="toggleModal('.portfolio-p')").left portfolio
+    .content-block.text-left
+        .col-lg-6.col-md-12.col-sm-12.mainImg
+            img(src='./img/main.png')
+        .col-lg-6.col-md-12.col-sm-12.h-100.h1-title-block
+            h1.align-middle.h1-title
