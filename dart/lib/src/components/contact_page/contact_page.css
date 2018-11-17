@@ -1,3 +1,101 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+h1 {
+  font-family: Open Sans;
+  font-size: 45px; }
+
+h5 {
+  font-family: Open Sans;
+  font-size: 14px; }
+
+h4 {
+  font-family: Open Sans;
+  font-size: 16px; }
+
+h6 {
+  font-family: Open Sans;
+  font-size: 12px; }
+
+.margin-bottom-119 {
+  margin-bottom: 119px; }
+
+.margin-top-119 {
+  margin-top: 119px; }
+
+.margin-bottom-40 {
+  margin-bottom: 40px; }
+
+.margin-top-40 {
+  margin-top: 40px; }
+
+.margin-bottom-89 {
+  margin-bottom: 89px; }
+
+.margin-top-89 {
+  margin-top: 89px; }
+
+.back-arrow i {
+  cursor: pointer; }
+
+footer {
+  z-index: 9 !important;
+  background: #f5f5f5;
+  padding-top: 1.5em;
+  padding-bottom: 1em;
+  position: absolute;
+  width: 100%; }
+  footer a {
+    color: black;
+    text-decoration: none !important;
+    transition: 0.5s; }
+    footer a:hover {
+      color: #ff0000; }
+  footer .text-md-left span {
+    line-height: 2;
+    text-transform: uppercase;
+    margin-left: 0.5em; }
+  footer .text-md-right i {
+    font-size: 14px;
+    margin-left: 1em;
+    cursor: pointer; }
+
+.page-title {
+  display: inline-flex;
+  flex-direction: column;
+  flex-basis: max-content;
+  flex-wrap: wrap;
+  position: relative; }
+  .page-title h1 {
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #202020;
+    text-transform: uppercase; }
+  .page-title h5 {
+    padding-left: 20px;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    top: 55px;
+    z-index: 9;
+    display: block;
+    color: red;
+    background: white;
+    text-transform: uppercase; }
+
+.red-btn {
+  background: #ff0000;
+  color: #ffffff;
+  padding: 0.5em 1em;
+  transition: 0.5s;
+  cursor: pointer;
+  border: 2px solid #ff0000; }
+  .red-btn:hover {
+    border: 2px solid #cc0000;
+    background: #cc0000; }
+  .red-btn:active {
+    border: 2px solid #ff0000;
+    background: #ffffff;
+    color: #ff0000; }
+
 .contact-p {
   transition: 0.5s;
   width: 100vw;
