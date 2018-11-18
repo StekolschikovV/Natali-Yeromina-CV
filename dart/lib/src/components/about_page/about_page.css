@@ -140,4 +140,99 @@ footer {
   top: 0vh;
   z-index: 9; }
 
+.about-p hr {
+  background: black;
+  width: 60%; }
+.about-p img {
+  max-width: 100%; }
+.about-p .red-btn {
+  margin-right: 1em; }
+.about-p hr {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em; }
+.about-p .line {
+  position: relative; }
+  .about-p .line .font-weight-bold {
+    margin-bottom: 0; }
+  .about-p .line .text-md-right {
+    margin-bottom: -3em; }
+    .about-p .line .text-md-right hr {
+      background: black;
+      width: 60%;
+      margin-right: 0; }
+    .about-p .line .text-md-right h1 {
+      position: relative; }
+      .about-p .line .text-md-right h1:after {
+        position: absolute;
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: black;
+        right: -17.5px;
+        left: auto;
+        top: 25px;
+        margin: auto;
+        z-index: 9;
+        outline: 3px solid white; }
+  .about-p .line .text-md-left {
+    margin-bottom: -3em; }
+    .about-p .line .text-md-left hr {
+      margin-left: 0; }
+    .about-p .line .text-md-left h1 {
+      position: relative; }
+      .about-p .line .text-md-left h1:after {
+        position: absolute;
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: black;
+        right: auto;
+        left: -17.5px;
+        top: 25px;
+        margin: auto;
+        z-index: 9;
+        outline: 3px solid white; }
+  .about-p .line h6 {
+    line-height: 1.2; }
+  .about-p .line:after {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: calc(100% + 5em);
+    background: black;
+    top: 5em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; }
+
+@media (max-width: 768px) {
+  .about-p .text-md-right, .about-p .text-md-left {
+    margin: auto !important; }
+  .about-p hr {
+    width: 50% !important;
+    margin-right: 25% !important;
+    margin-left: 25% !important; }
+  .about-p .margin-bottom-7 {
+    margin-bottom: 3em; }
+  .about-p .line h1 {
+    margin-top: 0.5em; }
+  .about-p h1:after, .about-p .line:after {
+    display: none; } }
+.about-p .education-contant .text-md-right hr {
+  background: black;
+  width: 60%;
+  margin-right: 0; }
+.about-p .education-contant .text-md-left hr {
+  background: black;
+  width: 60%;
+  margin-left: 0; }
+
+@media (max-width: 767px) {
+  .about-p .line {
+    margin-bottom: 40px;
+    margin-top: -35px; } }
+
 /*# sourceMappingURL=about_page.css.map */
