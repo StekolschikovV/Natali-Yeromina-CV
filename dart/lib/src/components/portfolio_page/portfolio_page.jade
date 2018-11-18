@@ -3,12 +3,27 @@
         .row
             .col-md-12.text-right
                 i.fa.fa-chevron-right(aria-hidden='true', (click)='pageClose')
+    .container.margin-bottom-40
+        .row
+            #tags.col-md-12
+                span(*ngFor='let el of tagPortfolioEl')
+                    button.btn(type='button',(click)='tagClickHandler(el)',class="{{selectedPortfolioEl.contains(el) ? 'selected' : ''}}")
+                        span {{el}}
     .container
         .row
             .col-md-4
-                a(*ngFor='let el of portfolioEl1', href="{{el.src.toString() != 'null' ? el.src : ''}}") {{el.title}}
+                span(*ngFor='let el of portfolioEl1')
+                    a(href="{{el.src.toString() != 'null' ? el.src : ''}}")
+                        img(src='{{el.img}}')
+                        span {{el.title}}
             .col-md-4
-                a(*ngFor='let el of portfolioEl2', href="{{el.src.toString() != 'null' ? el.src : ''}}") {{el.title}}
+                span(*ngFor='let el of portfolioEl2')
+                    a(href="{{el.src.toString() != 'null' ? el.src : ''}}")
+                        img(src='{{el.img}}')
+                        span {{el.title}}
             .col-md-4
-                a(*ngFor='let el of portfolioEl3',href="{{el.src.toString() != 'null' ? el.src : ''}}") {{el.title}}
+                span(*ngFor='let el of portfolioEl3')
+                    a(href="{{el.src.toString() != 'null' ? el.src : ''}}")
+                        img(src='{{el.img}}')
+                        span {{el.title}}
 

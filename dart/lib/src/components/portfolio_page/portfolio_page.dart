@@ -16,18 +16,29 @@ import 'package:angular/angular.dart';
 
 class PortfolioPage implements AbstractPage {
 
-  bool show = false;
+  bool show = true;
 
   List<PortfolioEl> portfolioEl = [];
   List<PortfolioEl> portfolioEl1 = [];
   List<PortfolioEl> portfolioEl2 = [];
   List<PortfolioEl> portfolioEl3 = [];
+  List<String> selectedPortfolioEl = [];
+  List<String> tagPortfolioEl = [];
 
   StreamSubscription subscription;
 
   PortfolioPage(){
     pageListen();
     loadLink();
+  }
+
+  void tagClickHandler(String e){
+    if(selectedPortfolioEl.contains(e)){
+      selectedPortfolioEl.remove(e);
+    } else {
+      selectedPortfolioEl.add(e);
+    }
+    sortLink();
   }
 
   void loadLink() async {
@@ -40,7 +51,6 @@ class PortfolioPage implements AbstractPage {
         storageBucket: "",
         messagingSenderId: "545859286062"
       );
-
     } on fb.FirebaseJsNotLoadedException catch (e) {
       print(e);
     }
@@ -49,12 +59,15 @@ class PortfolioPage implements AbstractPage {
     portfolio.onValue.listen((e) {
       var datasnapshot = e.snapshot;
       datasnapshot.forEach((el){
+        String tag = el.val()['tag'].toString();
         portfolioEl.add(new PortfolioEl(
-            el.val()['imgs'].toString(),
+            el.val()['img'].toString(),
             el.val()['src'].toString(),
-            el.val()['tag'].toString(),
+            tag,
             el.val()['title'].toString(),
         ));
+        if(!tagPortfolioEl.contains(tag) && tag != 'null')
+            tagPortfolioEl.add(el.val()['tag'].toString());
       });
       sortLink();
     });
@@ -62,17 +75,23 @@ class PortfolioPage implements AbstractPage {
 
   void sortLink(){
     int i = 0;
+    portfolioEl1 = [];
+    portfolioEl2 = [];
+    portfolioEl3 = [];
     portfolioEl.forEach((e){
-      if(i == 0){
-        portfolioEl1.add(e);
-        i++;
-      } else if(i == 1){
-        portfolioEl2.add(e);
-        i++;
-      } else if(i == 2){
-        portfolioEl3.add(e);
-        i = 0;
+      if(selectedPortfolioEl.length == 0 || selectedPortfolioEl.contains(e.tag)){
+        if(i == 0){
+          portfolioEl1.add(e);
+          i++;
+        } else if(i == 1){
+          portfolioEl2.add(e);
+          i++;
+        } else if(i == 2){
+          portfolioEl3.add(e);
+          i = 0;
+        }
       }
+
     });
   }
 
