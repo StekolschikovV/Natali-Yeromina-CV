@@ -96,6 +96,28 @@ footer {
     background: #ffffff;
     color: #ff0000; }
 
+footer {
+  z-index: 9 !important;
+  background: #f5f5f5;
+  padding-top: 1.5em;
+  padding-bottom: 1em;
+  position: absolute;
+  width: 100%; }
+  footer a {
+    color: black;
+    text-decoration: none !important;
+    transition: 0.5s; }
+    footer a:hover {
+      color: #ff0000; }
+  footer .text-md-left span {
+    line-height: 2;
+    text-transform: uppercase;
+    margin-left: 0.5em; }
+  footer .text-md-right i {
+    font-size: 14px;
+    margin-left: 1em;
+    cursor: pointer; }
+
 .portfolio-p {
   transition: 0.5s;
   width: 100vw;
@@ -128,25 +150,25 @@ footer {
     opacity: 0; }
   100% {
     opacity: 1; } }
-.portfolio-p .btn {
+.portfolio-p .page-content .btn {
   background: #cccccc;
   border: 1px solid #999999;
   border-radius: 0;
   text-transform: uppercase;
   outline: none !important; }
-.portfolio-p .selected {
+.portfolio-p .page-content .selected {
   background: white;
   border-color: #cc0000;
   color: #cc0000; }
-.portfolio-p img {
+.portfolio-p .page-content img {
   max-width: 100%;
   min-width: 100%; }
-.portfolio-p div a {
+.portfolio-p .page-content div a {
   position: relative;
   display: block;
   margin-bottom: 2em;
   color: black !important; }
-  .portfolio-p div a span {
+  .portfolio-p .page-content div a span {
     position: absolute;
     top: 0;
     right: 0;
@@ -160,9 +182,9 @@ footer {
     opacity: 0;
     transition: 0.5s;
     cursor: pointer; }
-    .portfolio-p div a span:hover {
+    .portfolio-p .page-content div a span:hover {
       opacity: 1; }
-  .portfolio-p div a img {
+  .portfolio-p .page-content div a img {
     max-width: 100%; }
 
 /*# sourceMappingURL=portfolio_page.css.map */

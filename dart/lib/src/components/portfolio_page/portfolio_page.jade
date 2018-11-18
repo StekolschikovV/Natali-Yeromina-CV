@@ -1,29 +1,40 @@
-.portfolio-p(class="{{show ? 'show' : ''}}")
-    .container.back-arrow.margin-top-40.margin-bottom-40
-        .row
-            .col-md-12.text-right
-                i.fa.fa-chevron-right(aria-hidden='true', (click)='pageClose')
-    .container.margin-bottom-40
-        .row
-            #tags.col-md-12
-                span(*ngFor='let el of tagPortfolioEl')
-                    button.btn(type='button',(click)='tagClickHandler(el)',class="{{selectedPortfolioEl.contains(el) ? 'selected' : ''}}")
-                        span {{el}}
-    .container
-        .row
-            .col-md-4
-                span(*ngFor='let el of portfolioEl1')
-                    a(href="{{el.src.toString() != 'null' ? el.src : ''}}")
-                        img(src='{{el.img}}')
-                        span {{el.title}}
-            .col-md-4
-                span(*ngFor='let el of portfolioEl2')
-                    a(href="{{el.src.toString() != 'null' ? el.src : ''}}")
-                        img(src='{{el.img}}')
-                        span {{el.title}}
-            .col-md-4
-                span(*ngFor='let el of portfolioEl3')
-                    a(href="{{el.src.toString() != 'null' ? el.src : ''}}")
-                        img(src='{{el.img}}')
-                        span {{el.title}}
+include ../constant_and_mixin.jade
 
+.portfolio-p(class="{{show ? 'show' : ''}}")
+    .page-content.margin-bottom-89
+        .container.back-arrow.margin-top-40.margin-bottom-40
+            .row
+                .col-md-12.text-right
+                    i.fa.fa-chevron-right(aria-hidden='true', (click)='pageClose')
+        .container.margin-top-40.margin-bottom-40
+            .row
+                .col-md-12.text-center
+                    +page-title('PORTFOLIO', 'MY PASSION')
+        .container.margin-bottom-40
+            .row
+                #tags.col-md-12
+                    span(*ngFor='let el of tagPortfolioEl')
+                        button.btn(type='button',(click)='tagClickHandler(el)',class="{{selectedPortfolioEl.contains(el) ? 'selected' : ''}}")
+                            span {{el}}
+        .container
+            .row
+                .col-md-4
+                    span(*ngFor='let el of portfolioEl1')
+                        a(href="{{el.src.toString() != 'null' ? el.src : ''}}")
+                            img(src='{{el.img}}')
+                            span {{el.title}}
+                .col-md-4
+                    span(*ngFor='let el of portfolioEl2')
+                        a(href="{{el.src.toString() != 'null' ? el.src : ''}}")
+                            img(src='{{el.img}}')
+                            span {{el.title}}
+                .col-md-4
+                    span(*ngFor='let el of portfolioEl3')
+                        a(href="{{el.src.toString() != 'null' ? el.src : ''}}")
+                            img(src='{{el.img}}')
+                            span {{el.title}}
+        .container.margin-top-40(*ngIf="isLoadMoreShow")
+            .row
+                .col.text-center
+                    button#loadMoreBtn((click)='loadMoreClickHandler').red-btn Load More {{loadMoreIndex}} {{portfolioEl.length}}
+    +footer
