@@ -4,3 +4,208 @@
   +page(0vh, 100vw)
 .strength-p.show
   +page(0vh, 0)
+
+@keyframes mymove
+  0%
+    left: 0
+    right: 0
+    transform: rotateY(180deg)
+    z-index: 0
+  10%
+    left: -100%
+    z-index: 0
+  30%
+    left: 0
+    z-index: 9
+  50%
+    transform: scale(1.1)
+  //box-shadow: 0px 0px 30px 0px $color-text-main
+  60%
+    left: 0
+  70%
+    left: 70%
+  80%
+    left: 70%
+  95%
+    left: 0
+    right: 0
+    transform: scale(0.2)
+    z-index: 0
+.anim
+  animation: mymove 10s alternate
+
+
+.strength-p
+
+  // #client-logo
+    // img
+      // display: flex
+      // max-height: 100px
+
+  img
+    max-width: 100%
+  .icons-top
+    .skills-slider
+      min-height: 300px
+      //background: red
+      //margin-top: calc(30px * 3)
+      position: relative
+      margin-bottom: 2em
+      img
+        //padding: 5px
+        //border: 1px solid $color-text-main
+        //border-radius: 2px
+        background-color: white
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        margin: auto
+        //box-shadow: 0px 0px 2px 0px $color-text-main
+        position: absolute
+        max-width: 50%
+        z-index: 0
+
+        &:nth-child(1)
+          left: -30px
+          top: 30px
+        &:nth-child(2)
+          left: -10
+          top: 10px
+        &:nth-child(3)
+          left: 10px
+          top: -10px
+        &:nth-child(4)
+          left: 30px
+          top: -30px
+
+    .skills-icons
+      // text-align: center !important
+      // background: red
+      align-items: center
+      justify-content: center
+      h5
+        line-height: 0.5
+      img
+        width: 80%
+        max-width: 150px
+        // margin-left: 10%
+        margin-bottom: 0.5em
+  //.skills-big-icons
+  //  img
+  //    max-width: 100%
+  #client-int
+    display: flex
+    flex-direction: row
+    background-image: url("../img/client_1s.png")
+    min-height: 10em
+    background-repeat: no-repeat
+    background-size: cover
+    padding: 0
+    margin: 0 15px
+    width: 100vw
+    .left, .right
+      display: flex
+      width: 50%
+      align-items: center
+      justify-content: center
+      .el
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: center
+        i
+          font-size: 6vw
+          color: $color-text-main-min-light
+        .text
+          margin-left: -1vw
+          *
+            line-height: 0.7
+          h1
+            color: white
+            font-weight: bold
+          h6
+            color: $color-text-red
+            font-size: 1.2em
+
+//    position: relative
+//    .left, .right
+//      position: absolute
+//      z-index: 1
+//      i
+//        font-size: 6vw
+//        color: $color-text-main-min-light
+//      .text
+//        position: absolute
+//        left: 90%
+//        top: 1vw
+//        bottom: 0
+//        margin: auto
+//        width: 120px
+//        display: flex
+//        flex-direction: column
+//        // align-items: center
+//        justify-content: center
+//        *
+//          line-height: 0.8
+//        h1
+//          color: white
+//          font-weight: bold
+//        h6
+//          color: $color-text-red
+//          font-size: 1em
+//    // max-width: 10vw
+//    .left, .right
+//      left: 35%
+//      top: 0
+//      bottom: 0
+//      margin: auto
+//      display: inline-table
+//    // height: 100px
+//    .right
+//      left: auto
+//      right: 35%
+//
+//@media (min-width: 1170px)
+//  .strength-p
+//    #client-int
+//      .text
+//        top: 5px !important
+//      i
+//        font-size: 75px !important
+//
+//@media (max-width: 1170px)
+//  .strength-p
+//    #client-int
+//      .left
+//        left: 30%
+//      .right
+//        right: 30%
+//
+//@media (max-width: 750px)
+//  .strength-p
+//    #client-int
+//      i
+//        font-size: 50px !important
+
+
+.strength-p
+  .slide
+    width: 80%
+    margin: auto
+    .carousel-inner
+    .col-md-3
+      display: inline-block
+      margin-left: -10px
+      a
+        img
+          height: 100px
+          width: auto
+    i
+      color: $color-text-main
+      font-size: 2em
+    .carousel-control-prev
+      left: -10%
+    .carousel-control-next
+      right: -10%
+

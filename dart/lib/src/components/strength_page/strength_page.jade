@@ -1,4 +1,120 @@
 include ../constant_and_mixin.jade
 
-.strength-p(class="{{show ? 'show' : ''}}")
+
+.strength-p.content-block-full(class="{{show ? 'show' : ''}}", #scrollable)
     +back-arrow('fa-chevron-left', 'strength-p')
+    .container
+        .row
+            //- ABOUT ME
+            .col-lg-2.col-xl-3.col-sm-1
+            .col-lg-8.col-xl-6.col-sm-10
+                .row
+                    .col-md-12.text-center.margin-top-40.margin-bottom-40
+                        +page-title('WHAT I DO', 'TAKE A LOOK')
+            .col-lg-2.col-xl-3.col-sm-1
+            //- ICONS TOP
+            .col-md-12.icons-top
+                .row
+                    .col-lg-6.skills-slider
+                        img(src='img/serv1.jpg', class="{{animImg == 0 ? 'anim' : ''}}")
+                        img(src='img/serv2.jpg', class="{{animImg == 1 ? 'anim' : ''}}")
+                        img(src='img/serv3.jpg', class="{{animImg == 2 ? 'anim' : ''}}")
+                        img(src='img/serv4.jpg', class="{{animImg == 3 ? 'anim' : ''}}")
+                    .col-lg-6(style="min-width:300px")
+                        .row.skills-icons.text-center
+                            .col-sx-4.text-center
+                                img(src='./img/Icone_1.png')
+                                h5.text-center.font-weight-bold Logo
+                                h5.text-center.font-weight-bold Design
+                            .col-sx-4.text-center
+                                img(src='./img/Icone_2.png')
+                                h5.text-center.font-weight-bold Website
+                                h5.text-center.font-weight-bold Design
+                            .col-sx-4.text-center
+                                img(src='./img/Icone_3.png')
+                                h5.text-center.font-weight-bold Graphic
+                                h5.text-center.font-weight-bold Design
+                            .col-sx-4.text-center
+                                img(src='./img/Icone_4.png')
+                                h5.text-center.font-weight-bold Branding
+                                h5.text-center.font-weight-bold on Transport
+                            .col-sx-4.text-center
+                                img(src='./img/Icone_5.png')
+                                h5.text-center.font-weight-bold Creative
+                                h5.text-center.font-weight-bold Solutions
+                            .col-sx-4.text-center
+                                img(src='./img/Icone_6.png')
+                                h5.text-center.font-weight-bold Professional
+                                h5.text-center.font-weight-bold Preparation
+                                h5.text-center.font-weight-bold for printing
+            .col-md-12.text-center.margin-top-89
+                +page-title('Work skills', 'how i can')
+                ul.text-left.margin-top-40.margin-bottom-40
+                    li work with the entire marketing team to develop and transform sales, marketing and product positioning concepts;
+                    li designing and creating of company logos and brand books;
+                    li branding of corporate and public transportation;
+                    li creating of layouts and editing flyers, booklets, brochures, posters, internal signage, templates, banners and illustrations along with another visual materials needed to communicate a desired message to reach a target audience;
+                    li coordinate all administrative aspects of production, including creating initial designs and receiving approval;
+                    li checking and receiving approval for all color, copy, text, and format selections and scaling images for print production;
+                    li preparing final designs for print or presentation;
+                    li design for a wide variety of mediums including email, online banner ads, social media graphics and ads, lifestyle images;
+                    li photo retouching/manipulation;
+                    li dressing of promo actions and places of sale;
+                    li graphic design of facades, shop windows, shops (boutiques) and etc;
+                    li ability to work against strict deadlines and deliver on time.
+    .container-fluid.padding-0.margin-bottom-89
+        .row
+            .col-md-12.padding-0#client-int(#clientInt)
+                .left
+                    .el
+                        i.far.fa-smile
+                        .text
+                            h1 {{happyClientsNow}}
+                            h6 Happy Clients
+                .right
+                    .el
+                        i.far.fa-check-circle
+                        .text
+                            h1 {{projectDoneNow}}
+                            h6 Project Done
+
+    .container.skills-big-icons.margin-bottom-89
+        .row
+            .col-lg-2.col-xl-3.col-sm-1
+            .col-lg-8.col-xl-6.col-sm-10
+                .row
+                    .col-md-12.text-center.margin-bottom-40
+                        +page-title('MY SKILLS', 'how i can')
+            .col-lg-2.col-xl-3.col-sm-1
+
+            .col-lg-2.col-md-2.col-sm-0
+            .col-lg-2.col-md-2.col-sm-2.text-center
+                img(src="./img/Ps.png")
+            .d-lg-none.d-md-none.col-sm-1
+            .col-lg-2.col-md-2.col-sm-2.text-center
+                img(src="./img/Ai.png")
+            .d-lg-none.d-md-none.col-sm-1
+            .col-lg-2.col-md-2.col-sm-2.text-center
+                img(src="./img/ID.png")
+            .d-lg-none.d-md-none.col-sm-1
+            .col-lg-2.col-md-2.col-sm-2.text-center
+                img(src="./img/Cr.png")
+            .col-lg-2.col-md-2
+    .container
+        .row
+            .col.text-center.margin-bottom-40
+                +page-title('MY client', 'WORKED WITH')
+
+    .container-flud.margin-bottom-89
+        #demo.carousel.slide(data-ride='carousel')
+            .carousel-inner.no-padding
+                +carousel-item('active','./img/client/1.jpg', './img/client/2.jpg', './img/client/3.jpg', './img/client/4.jpg')
+                +carousel-item('','./img/client/5.jpg', './img/client/6.jpg', './img/client/7.jpg', './img/client/8.jpg')
+                +carousel-item('','./img/client/9.jpg', './img/client/10.jpg', './img/client/11.jpg', './img/client/12.jpg')
+            a.carousel-control-prev(href='#demo', data-slide='prev')
+                i.fa.fa-arrow-left(aria-hidden='true')
+
+            a.carousel-control-next(href='#demo', data-slide='next')
+                i.fa.fa-arrow-right(aria-hidden='true')
+
+    +footer

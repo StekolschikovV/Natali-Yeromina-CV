@@ -3,9 +3,8 @@ import '../abstract_page.dart';
 import 'dart:async';
 import '../../../events.dart';
 import 'package:firebase/firebase.dart' as fb;
-import 'package:firebase/src/assets/assets.dart';
 import '../data_type.dart';
-import 'package:angular/angular.dart';
+
 
 @Component(
   selector: 'portfolio-page',
