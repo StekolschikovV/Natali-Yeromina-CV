@@ -79,7 +79,7 @@ footer {
     font-weight: bold;
     position: absolute;
     right: 0;
-    top: 55px;
+    bottom: -9px;
     z-index: 9;
     display: block;
     color: red;
@@ -144,5 +144,54 @@ footer {
   left: 0;
   top: 0vh;
   z-index: 9; }
+
+.contact-p .c-block {
+  position: relative; }
+  .contact-p .c-block .text {
+    position: absolute;
+    width: calc(100% - 50px);
+    height: 100%;
+    color: white;
+    top: 0;
+    left: 25px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em; }
+    .contact-p .c-block .text .title {
+      display: flex; }
+    .contact-p .c-block .text .val {
+      display: flex; }
+  .contact-p .c-block img {
+    width: 100%; }
+.contact-p form input, .contact-p form textarea {
+  border-radius: 0;
+  margin-bottom: 1em;
+  border: 0;
+  background: #e1e1e1; }
+.contact-p #contactModal {
+  z-index: 10000; }
+  .contact-p #contactModal * {
+    border: 0;
+    border-radius: 0; }
+  .contact-p #contactModal .modal-content {
+    border: 5px solid #e1e1e1;
+    border-top: 0;
+    box-shadow: 0px 5px 10px 3px #e1e1e1; }
+    .contact-p #contactModal .modal-content h2 {
+      color: #ff0000; }
+    .contact-p #contactModal .modal-content h4 {
+      color: #202020; }
+    .contact-p #contactModal .modal-content .modal-header {
+      padding: 0;
+      background: #e1e1e1; }
+      .contact-p #contactModal .modal-content .modal-header i {
+        font-weight: 100 !important; }
+
+.modal-backdrop {
+  z-index: -1; }
 
 /*# sourceMappingURL=contact_page.css.map */

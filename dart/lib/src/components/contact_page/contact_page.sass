@@ -4,3 +4,60 @@
   +page(100vh, 0)
 .contact-p.show
   +page(0vh, 0)
+
+.contact-p
+  .c-block
+    position: relative
+    // margin-bottom: 3em
+    .text
+      position: absolute
+      width: calc(100% - 50px)
+      height: 100%
+      color: white
+      top: 0
+      left:  25px
+      bottom: 0
+      display: flex
+      flex-direction: column
+      flex-wrap: nowrap
+      justify-content: center
+      align-items: center
+      font-size: 0.8em
+      .title
+        display: flex
+      .val
+        display: flex
+    img
+      width: 100%
+  .form-title
+  // margin-bottom: 2em
+  form
+    // margin-bottom: 4em
+    input, textarea
+      border-radius: 0
+      margin-bottom: 1em
+      border: 0
+      background: $color-text-main-super-light
+
+  #contactModal
+    z-index: 10000
+    *
+      border: 0
+      border-radius: 0
+    .modal-content
+      border: 5px solid $color-text-main-super-light
+      border-top: 0
+      box-shadow: 0px 5px 10px 3px $color-text-main-super-light
+      h2
+        color: $color-text-red
+      h4
+        color: $color-text-main
+      .modal-header
+        padding: 0
+        background: $color-text-main-super-light
+        i
+          font-weight: 100 !important
+
+
+.modal-backdrop
+  z-index: -1

@@ -43,6 +43,7 @@ class StrengthPage implements AfterViewInit {
     Element page = event.target as Element;
     if((clientInt.offsetTop - window.innerHeight) + 50 < page.scrollTop && !IsAnimRun){
       animClientInt();
+      IsAnimRun = true;
     }
   }
 
@@ -59,7 +60,7 @@ class StrengthPage implements AfterViewInit {
 
   void animLoop() {
     new Timer(const Duration(seconds: 10), () {
-      if (animImg < 5)
+      if (animImg < 2)
         animImg++;
       else
         animImg = 0;

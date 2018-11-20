@@ -10,26 +10,55 @@ import '../abstract_page.dart';
   selector: 'contact-page',
   styleUrls: ['contact_page.css'],
   templateUrl: 'contact_page.html',
+  directives: [coreDirectives],
 )
-class ContactPage implements AbstractPage{
+class ContactPage implements AbstractPage {
+  bool show = true;
 
-  bool show = false;
+  String modalClass = '';
+  String modalStyle = '';
+
+  @ViewChild("formInputName")
+  InputElement formInputName;
+
+  @ViewChild("formInputEmail")
+  InputElement formInputEmail;
+
+  @ViewChild("formInputSubject")
+  InputElement formInputSubject;
+
+  @ViewChild("formInputMassage")
+  TextAreaElement formInputMassage;
 
   StreamSubscription subscription;
 
-  ContactPage(){
+  ContactPage() {
     pageListen();
   }
 
-  void pageListen(){
+  void pageListen() {
     eventBus.on<Nav>().listen((event) {
       event.nowPage == Page.Contact ? show = true : show = false;
     });
   }
 
-  void pageClose(){
+  void pageClose() {
     eventBus.fire(new Nav(null));
   }
 
+  void formOnSubmitHandler() {
+    bool isName = formInputName.value.length > 0;
+    bool isEmail = formInputEmail.value.length > 0;
+    bool isSubject = formInputSubject.value.length > 0;
+    bool isMassage = formInputMassage.value.length > 0;
+    if (isName && isEmail && isSubject && isMassage) {
+      modalClass = 'show';
+      modalStyle = 'display: block';
+    }
+  }
 
+  void formClose() {
+    modalClass = '';
+    modalStyle = '';
+  }
 }
