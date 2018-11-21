@@ -527,6 +527,7 @@ packages/test/src/runner/browser/static/favicon.ico
 packages/test/src/runner/browser/static/host.css
 packages/test/src/runner/browser/static/host.dart.js
 packages/test/src/runner/browser/static/index.html
+send_form_email.php
 styles.css
 styles.css.map
 styles.sass

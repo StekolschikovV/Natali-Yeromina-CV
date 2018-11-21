@@ -13,7 +13,7 @@ import '../abstract_page.dart';
   directives: [coreDirectives],
 )
 class ContactPage implements AbstractPage {
-  bool show = true;
+  bool show = false;
 
   String modalClass = '';
   String modalStyle = '';

@@ -18,6 +18,7 @@ class AboutPage {
 
   AboutPage(){
     eventBus.on<Nav>().listen((event) {
+      print(event.nowPage == Page.About);
       event.nowPage == Page.About ? show = true : show = false;
     });
   }
