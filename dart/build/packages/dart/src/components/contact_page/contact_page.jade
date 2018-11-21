@@ -1,0 +1,59 @@
+include ../constant_and_mixin.jade
+
+.contact-p(class="{{show ? 'show' : ''}}")
+    +back-arrow('fa-chevron-up', 'contact-p')
+    .container
+        .row.page-controls.text-center.margin-top-40.margin-bottom-40
+            .col-md-12.text-center
+                +page-title('GET IN TOUCH', 'GET IN TOUCH')
+        .row
+            .col-md-12.form-title.text-center.margin-bottom-40
+                h4 HOW I CAN HELP YOU?
+            .col-lg-2.col-xl-3.col-sm-1
+            .col-lg-8.col-xl-6.col-sm-10
+                form(onsubmit="return false;").margin-bottom-89
+                    .form-row
+                        .col-md-6
+                            input(type='text', name='NAME', placeholder='YOUR NAME', required, #formInputName).form-control
+                        .col-md-6
+                            input(type='text', name='E-MAIL', placeholder='YOUR E-MAIL', required, #formInputEmail).form-control
+                        .col-md-12
+                            input(type='text', name='SUBJECT', placeholder='SUBJECT', required, #formInputSubject).form-control
+                        .col-md-12
+                            textarea(rows="6", name='MESSAGE', placeholder='MESSAGE', required, #formInputMassage).form-control
+                        .col-md-12
+                            //button(type='submit', data-toggle="modal", data-target="#contactModal").red-btn Submit
+                            button(type='submit', (click)='formOnSubmitHandler').red-btn Submit
+            .col-lg-2.col-xl-3.col-sm-1
+            .col-lg-2.col-xl-3.col-sm-1
+            .col-lg-8.col-xl-6.col-sm-10.margin-bottom-89
+                .row
+                    .col-sm-6.col-xs-6.c-block
+                        img(src='./img/с1.jpg')
+                        .text
+                            .title PHONE
+                            .val +1 (386) 302 9999
+                    .col-sm-6.col-xs-6.c-block
+                        img(src='./img/с2.jpg')
+                        .text
+                            .title E-MAIL
+                            .val NataliyaYeromina@gmai.com
+            .col-lg-2.col-xl-3.col-sm-1
+
+            .col-md-12
+                #contactModal.modal.fade(class='{{modalClass}}', tabindex='-1', role='dialog', aria-labelledby='contactModalCenterTitle', aria-hidden='true', style='{{modalStyle}}')
+                    .modal-dialog.modal-dialog-centered(role='document')
+                        .modal-content
+                            .modal-header
+                                button.close(type='button', data-dismiss='modal', aria-label='Close', (click)='formClose')
+                                    span(aria-hidden='true') ×
+                            .modal-body
+                                br
+                                br
+                                h2.text-center.text-uppercase Thank you
+                                h4.text-center.text-uppercase for your letter
+                                br
+                                h4.text-center I will connect with you as soon as possible.
+                                br
+                                br
+    +footer
