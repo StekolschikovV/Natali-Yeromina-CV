@@ -250,9 +250,11 @@ footer {
   .strength-p .slide .col-md-3 {
     display: inline-block;
     margin-left: -10px; }
-    .strength-p .slide .col-md-3 a img {
-      height: 100px;
-      width: auto; }
+    .strength-p .slide .col-md-3 a {
+      height: 100px; }
+      .strength-p .slide .col-md-3 a img {
+        max-height: 100px;
+        width: auto; }
   .strength-p .slide i {
     color: #202020;
     font-size: 2em; }

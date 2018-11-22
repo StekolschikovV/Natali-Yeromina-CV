@@ -75,6 +75,7 @@ class PortfolioPage implements AbstractPage {
         ));
         if(!tagPortfolioEl.contains(tag) && tag != 'null')
             tagPortfolioEl.add(el.val()['tag'].toString());
+        eventBus.fire(new Loaded(isPortfolioLoaded: true));
       });
       sortLink();
     });

@@ -1,10 +1,11 @@
 import 'package:angular/angular.dart';
 import 'dart:html';
-
-import 'dart:async';
-import 'dart:html';
-import '../../../events.dart';
 import 'dart:io';
+import 'dart:async';
+import 'package:http/browser_client.dart';
+
+
+import '../../../events.dart';
 import 'dart:convert';
 @Component(
   selector: 'index-page',
@@ -19,12 +20,8 @@ class IndexPage{
 
   String title = '';
 
-  IndexPage(){
+  IndexPage()  {
     titleAnimation('name');
-
-//    HttpClient()
-//        .getUrl(Uri.parse('http://yeromina.com/build/send_form_email.php?name=111&age=2214sss')) // produces a request object
-//        .then((request) => request.close());
   }
 
   void navClickHandler(String page){

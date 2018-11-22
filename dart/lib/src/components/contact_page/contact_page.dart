@@ -1,8 +1,7 @@
 import 'package:angular/angular.dart';
 import 'dart:html';
-
 import 'dart:async';
-import 'dart:html';
+import 'package:http/browser_client.dart';
 import '../../../events.dart';
 import '../abstract_page.dart';
 
@@ -54,11 +53,26 @@ class ContactPage implements AbstractPage {
     if (isName && isEmail && isSubject && isMassage) {
       modalClass = 'show';
       modalStyle = 'display: block';
+      sendEmail();
     }
   }
 
   void formClose() {
     modalClass = '';
     modalStyle = '';
+  }
+
+  void sendEmail() async {
+    var client = new BrowserClient();
+    var url = 'http://yeromina.com/send_form_email.php';
+    var response =
+    await client.post(url, body: {
+      'Name': formInputName.value,
+      'Email': formInputEmail.value,
+      'Subject': formInputSubject.value,
+      'Massage': formInputMassage.value,
+    });
+    print('Response status: ${response.statusCode}');
+    print('Response body: ${response.body}');
   }
 }
