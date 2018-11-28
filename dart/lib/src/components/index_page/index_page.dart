@@ -16,7 +16,9 @@ import 'dart:convert';
 class IndexPage{
 
   String textName = "I'm\n Natali Yeromina";
-  String textWork = "I'm\n Graphic Design";
+//  String textName = "123";
+  String textWork = "I'm\n Graphic Designer";
+//  String textWork = "456";
 
   String title = '';
 
@@ -43,20 +45,35 @@ class IndexPage{
 
   void titleAnimation(String type){
     new Timer(const Duration(milliseconds: 300), (){
+      print(type);
       if(type == 'name'){
-        if(title.length == textName.length - 1){
+//        if(title.length == textName.length - 1){
+//          title = '';
+//          titleAnimation('work');
+//        } else {
+//          title += textWork[title.length];
+//          titleAnimation('name');
+//        }
+        if(title == textName){
           title = '';
           titleAnimation('work');
         } else {
-          title += textWork[title.length];
+          title += textName[title.length];
           titleAnimation('name');
         }
       } else {
-        if(title.length == textWork.length){
+//        if(title.length == textWork.length){
+//          title = '';
+//          titleAnimation('name');
+//        } else {
+//          title += textName[title.length];
+//          titleAnimation('work');
+//        }
+        if(title == textWork){
           title = '';
           titleAnimation('name');
         } else {
-          title += textName[title.length];
+          title += textWork[title.length];
           titleAnimation('work');
         }
       }
