@@ -20,17 +20,17 @@ include ../constant_and_mixin.jade
             .row
                 .col-md-4
                     span(*ngFor='let el of portfolioEl1')
-                        a(href="{{el.src.toString() != 'null' ? el.src : ''}}")
+                        a(href="{{el.src.toString() != 'null' ? el.src : ''}}", target="_blank")
                             img(src='{{el.img}}')
                             span {{el.title}}
                 .col-md-4
                     span(*ngFor='let el of portfolioEl2')
-                        a(href="{{el.src.toString() != 'null' ? el.src : ''}}")
+                        a(href="{{el.src.toString() != 'null' ? el.src : ''}}", target="_blank")
                             img(src='{{el.img}}')
                             span {{el.title}}
                 .col-md-4
                     span(*ngFor='let el of portfolioEl3')
-                        a(href="{{el.src.toString() != 'null' ? el.src : ''}}")
+                        a(href="{{el.src.toString() != 'null' ? el.src : ''}}", target="_blank")
                             img(src='{{el.img}}')
                             span {{el.title}}
         .container.margin-top-40(*ngIf="isLoadMoreShow")

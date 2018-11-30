@@ -45,7 +45,6 @@ class IndexPage{
 
   void titleAnimation(String type){
     new Timer(const Duration(milliseconds: 300), (){
-      print(type);
       if(type == 'name'){
 //        if(title.length == textName.length - 1){
 //          title = '';
