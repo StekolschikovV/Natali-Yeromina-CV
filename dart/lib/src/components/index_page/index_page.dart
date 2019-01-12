@@ -13,14 +13,13 @@ import 'dart:convert';
   templateUrl: 'index_page.html',
 )
 
-class IndexPage{
+class IndexPage {
 
-  String textName = "I'm\n Natali Yeromina";
-//  String textName = "123";
-  String textWork = "I'm\n Graphic Designer";
-//  String textWork = "456";
-
+  String textName = "I'm\n Natalia\n Yeromina";
+  String textWork = "I'm\n Graphic\n Designer";
   String title = '';
+
+  String lastType = 'name';
 
   IndexPage()  {
     titleAnimation('name');
@@ -44,39 +43,39 @@ class IndexPage{
   }
 
   void titleAnimation(String type){
-    new Timer(const Duration(milliseconds: 300), (){
-      if(type == 'name'){
-//        if(title.length == textName.length - 1){
-//          title = '';
-//          titleAnimation('work');
-//        } else {
-//          title += textWork[title.length];
-//          titleAnimation('name');
-//        }
-        if(title == textName){
-          title = '';
-          titleAnimation('work');
-        } else {
-          title += textName[title.length];
-          titleAnimation('name');
-        }
+    if(type == lastType){
+      new Timer(const Duration(milliseconds: 300), (){
+        setText(type);
+      });
+    } else {
+      lastType = type;
+      new Timer(const Duration(seconds: 3), (){
+        setText(type);
+      });
+    }
+
+  }
+
+  void setText(String type){
+    if(type == 'name'){
+      if(title == textName){
+        title = '';
+        titleAnimation('work');
       } else {
-//        if(title.length == textWork.length){
-//          title = '';
-//          titleAnimation('name');
-//        } else {
-//          title += textName[title.length];
-//          titleAnimation('work');
-//        }
-        if(title == textWork){
-          title = '';
-          titleAnimation('name');
-        } else {
-          title += textWork[title.length];
-          titleAnimation('work');
-        }
+        title += textName[title.length];
+        querySelector('.h1-title').innerHtml = title.replaceAll('\n', '<br>');
+        titleAnimation('name');
       }
-    });
+    } else {
+      if(title == textWork){
+        title = '';
+        titleAnimation('name');
+      } else {
+        title += textWork[title.length];
+        querySelector('.h1-title').innerHtml = title.replaceAll('\n', '<br>');
+        titleAnimation('work');
+      }
+    }
   }
 
 }
